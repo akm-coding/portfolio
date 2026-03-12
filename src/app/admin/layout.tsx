@@ -1,6 +1,6 @@
 import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
-import { LogoutButton } from '@/components/auth/logout-button'
+import { AdminSidebar } from '@/components/layout/admin-sidebar'
 
 export default async function AdminLayout({
   children,
@@ -15,14 +15,9 @@ export default async function AdminLayout({
   }
 
   return (
-    <div className="min-h-screen">
-      <header className="border-b">
-        <div className="container mx-auto flex h-14 items-center justify-between px-4">
-          <span className="font-semibold">Admin</span>
-          <LogoutButton />
-        </div>
-      </header>
-      <main className="container mx-auto px-4 py-8">
+    <div className="dark bg-background text-foreground min-h-screen">
+      <AdminSidebar />
+      <main className="flex-1 p-6 md:ml-64">
         {children}
       </main>
     </div>
