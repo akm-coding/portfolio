@@ -28,11 +28,11 @@ Decimal phases appear between their surrounding integers in numeric order.
   2. Visiting any /admin route while unauthenticated redirects to the login page
   3. Dark/light/system theme toggle works with no flash of unstyled content on page load
   4. Navigation shell renders on all screen sizes (mobile, tablet, desktop) with appropriate responsive behavior
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 01-01: TBD
-- [ ] 01-02: TBD
+- [ ] 01-01-PLAN.md — Project scaffolding with Supabase auth (email/password + GitHub OAuth, middleware route protection)
+- [ ] 01-02-PLAN.md — Theme system (dark/light/system toggle) and navigation shell (public navbar + admin sidebar)
 
 ### Phase 2: Public Portfolio
 **Goal**: Visitors can browse the complete portfolio -- hero, projects, experience, education, skills, and contact -- all rendering real data from Supabase
