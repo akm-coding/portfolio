@@ -2,13 +2,13 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: unknown
-last_updated: "2026-03-12T17:45:24.375Z"
+status: in-progress
+last_updated: "2026-03-12T18:40:35Z"
 progress:
-  total_phases: 1
+  total_phases: 4
   completed_phases: 1
-  total_plans: 2
-  completed_plans: 2
+  total_plans: 6
+  completed_plans: 3
 ---
 
 # Project State
@@ -18,33 +18,34 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-12)
 
 **Core value:** Visitors instantly understand Aung Kaung Myat's capabilities and experience through a polished, animated portfolio that the owner can update anytime without touching code.
-**Current focus:** Phase 1: Foundation
+**Current focus:** Phase 2: Public Portfolio
 
 ## Current Position
 
-Phase: 1 of 4 (Foundation)
-Plan: 2 of 2 in current phase
-Status: Phase Complete
-Last activity: 2026-03-13 -- Completed 01-02-PLAN.md
+Phase: 2 of 4 (Public Portfolio)
+Plan: 1 of 4 in current phase
+Status: In Progress
+Last activity: 2026-03-13 -- Completed 02-01-PLAN.md
 
-Progress: [██░░░░░░░░] 20%
+Progress: [███░░░░░░░] 30%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 2
-- Average duration: 6.5min
-- Total execution time: 0.22 hours
+- Total plans completed: 3
+- Average duration: 5.3min
+- Total execution time: 0.27 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 01-foundation | 2 | 13min | 6.5min |
+| 02-public-portfolio | 1 | 3min | 3min |
 
 **Recent Trend:**
-- Last 5 plans: 01-01 (5min), 01-02 (8min)
-- Trend: -
+- Last 5 plans: 01-01 (5min), 01-02 (8min), 02-01 (3min)
+- Trend: improving
 
 *Updated after each plan completion*
 
@@ -62,6 +63,8 @@ Recent decisions affecting current work:
 - 01-02: Used next-themes with attribute=class and enableSystem for three-state theme support
 - 01-02: Admin forced dark via div.dark wrapper, independent of public theme preference
 - 01-02: Public pages under (public) route group for shared navbar without URL changes
+- 02-01: Query functions return null/empty arrays on error instead of throwing for graceful degradation
+- 02-01: Manual TypeScript types instead of Supabase CLI-generated types to avoid CLI dependency
 
 ### Pending Todos
 
@@ -75,5 +78,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-13
-Stopped at: Completed 01-02-PLAN.md (Theme & Layout Shell)
+Stopped at: Completed 02-01-PLAN.md (Data Layer)
 Resume file: None

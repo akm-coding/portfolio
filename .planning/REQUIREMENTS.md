@@ -14,14 +14,14 @@
 
 ### Profile
 
-- [ ] **PROF-01**: Hero section displays name, title, tagline, and profile photo
-- [ ] **PROF-02**: About/summary section with bio text
-- [ ] **PROF-03**: Resume download link
+- [x] **PROF-01**: Hero section displays name, title, tagline, and profile photo
+- [x] **PROF-02**: About/summary section with bio text
+- [x] **PROF-03**: Resume download link
 - [ ] **PROF-04**: Admin can edit profile info, summary, and upload photo
 
 ### Projects
 
-- [ ] **PROJ-01**: Projects displayed in filterable grid with title, description, tech tags, and links
+- [x] **PROJ-01**: Projects displayed in filterable grid with title, description, tech tags, and links
 - [ ] **PROJ-02**: Individual project detail pages with full description and images
 - [ ] **PROJ-03**: Admin can create, edit, and delete projects
 - [ ] **PROJ-04**: Admin can upload project screenshots via Supabase Storage
@@ -29,22 +29,22 @@
 
 ### Experience
 
-- [ ] **EXPR-01**: Work experience displayed as timeline with company, role, dates, and description
+- [x] **EXPR-01**: Work experience displayed as timeline with company, role, dates, and description
 - [ ] **EXPR-02**: Admin can create, edit, and delete experience entries
 
 ### Education
 
-- [ ] **EDUC-01**: Education displayed with institution, degree, field, and dates
+- [x] **EDUC-01**: Education displayed with institution, degree, field, and dates
 - [ ] **EDUC-02**: Admin can create, edit, and delete education entries
 
 ### Skills
 
-- [ ] **SKLL-01**: Skills displayed by category with proficiency indicators
+- [x] **SKLL-01**: Skills displayed by category with proficiency indicators
 - [ ] **SKLL-02**: Admin can add, edit, delete, and reorder skills
 
 ### Contact
 
-- [ ] **CTCT-01**: Contact form with name, email, and message fields
+- [x] **CTCT-01**: Contact form with name, email, and message fields
 - [ ] **CTCT-02**: Social links displayed (GitHub, LinkedIn, email, phone)
 - [ ] **CTCT-03**: Admin receives email notification on new contact submission
 - [ ] **CTCT-04**: Admin can view and manage contact messages in dashboard
@@ -94,22 +94,22 @@
 | AUTH-02 | Phase 1 | Complete |
 | AUTH-03 | Phase 1 | Complete |
 | AUTH-04 | Phase 1 | Complete |
-| PROF-01 | Phase 2 | Pending |
-| PROF-02 | Phase 2 | Pending |
-| PROF-03 | Phase 2 | Pending |
+| PROF-01 | Phase 2 | Complete |
+| PROF-02 | Phase 2 | Complete |
+| PROF-03 | Phase 2 | Complete |
 | PROF-04 | Phase 3 | Pending |
-| PROJ-01 | Phase 2 | Pending |
+| PROJ-01 | Phase 2 | Complete |
 | PROJ-02 | Phase 2 | Pending |
 | PROJ-03 | Phase 3 | Pending |
 | PROJ-04 | Phase 3 | Pending |
 | PROJ-05 | Phase 2 | Pending |
-| EXPR-01 | Phase 2 | Pending |
+| EXPR-01 | Phase 2 | Complete |
 | EXPR-02 | Phase 3 | Pending |
-| EDUC-01 | Phase 2 | Pending |
+| EDUC-01 | Phase 2 | Complete |
 | EDUC-02 | Phase 3 | Pending |
-| SKLL-01 | Phase 2 | Pending |
+| SKLL-01 | Phase 2 | Complete |
 | SKLL-02 | Phase 3 | Pending |
-| CTCT-01 | Phase 2 | Pending |
+| CTCT-01 | Phase 2 | Complete |
 | CTCT-02 | Phase 2 | Pending |
 | CTCT-03 | Phase 3 | Pending |
 | CTCT-04 | Phase 3 | Pending |
