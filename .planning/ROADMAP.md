@@ -31,8 +31,8 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans**: 2 plans
 
 Plans:
-- [ ] 01-01-PLAN.md — Project scaffolding with Supabase auth (email/password + GitHub OAuth, middleware route protection)
-- [ ] 01-02-PLAN.md — Theme system (dark/light/system toggle) and navigation shell (public navbar + admin sidebar)
+- [x] 01-01-PLAN.md — Project scaffolding with Supabase auth (email/password + GitHub OAuth, middleware route protection)
+- [x] 01-02-PLAN.md — Theme system (dark/light/system toggle) and navigation shell (public navbar + admin sidebar)
 
 ### Phase 2: Public Portfolio
 **Goal**: Visitors can browse the complete portfolio -- hero, projects, experience, education, skills, and contact -- all rendering real data from Supabase
@@ -44,12 +44,13 @@ Plans:
   3. Visitor sees work experience as a timeline and education with institution/degree/dates
   4. Visitor sees skills organized by category with proficiency indicators
   5. Visitor can submit a contact form (name, email, message) and sees social links (GitHub, LinkedIn, email, phone)
-**Plans**: TBD
+**Plans**: 4 plans
 
 Plans:
-- [ ] 02-01: TBD
-- [ ] 02-02: TBD
-- [ ] 02-03: TBD
+- [ ] 02-01-PLAN.md — Database schema, TypeScript types, query functions, and seed data
+- [ ] 02-02-PLAN.md — Hero, About, Experience, Education, and Skills sections
+- [ ] 02-03-PLAN.md — Projects section with filtering and project detail pages
+- [ ] 02-04-PLAN.md — Contact section with form/server action and home page composition
 
 ### Phase 3: Admin Dashboard
 **Goal**: Site owner can manage all portfolio content through a protected dashboard without touching code
@@ -88,6 +89,6 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation | 2/2 | Complete   | 2026-03-12 |
-| 2. Public Portfolio | 0/3 | Not started | - |
+| 2. Public Portfolio | 0/4 | Not started | - |
 | 3. Admin Dashboard | 0/2 | Not started | - |
 | 4. Polish & Launch | 0/1 | Not started | - |
