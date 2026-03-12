@@ -45,7 +45,7 @@
 ### Contact
 
 - [x] **CTCT-01**: Contact form with name, email, and message fields
-- [ ] **CTCT-02**: Social links displayed (GitHub, LinkedIn, email, phone)
+- [x] **CTCT-02**: Social links displayed (GitHub, LinkedIn, email, phone)
 - [ ] **CTCT-03**: Admin receives email notification on new contact submission
 - [ ] **CTCT-04**: Admin can view and manage contact messages in dashboard
 
@@ -110,7 +110,7 @@
 | SKLL-01 | Phase 2 | Complete |
 | SKLL-02 | Phase 3 | Pending |
 | CTCT-01 | Phase 2 | Complete |
-| CTCT-02 | Phase 2 | Pending |
+| CTCT-02 | Phase 2 | Complete |
 | CTCT-03 | Phase 3 | Pending |
 | CTCT-04 | Phase 3 | Pending |
 | DSGN-01 | Phase 1 | Complete |
