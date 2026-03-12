@@ -22,10 +22,10 @@
 ### Projects
 
 - [x] **PROJ-01**: Projects displayed in filterable grid with title, description, tech tags, and links
-- [ ] **PROJ-02**: Individual project detail pages with full description and images
+- [x] **PROJ-02**: Individual project detail pages with full description and images
 - [ ] **PROJ-03**: Admin can create, edit, and delete projects
 - [ ] **PROJ-04**: Admin can upload project screenshots via Supabase Storage
-- [ ] **PROJ-05**: Visitors can filter projects by tech stack
+- [x] **PROJ-05**: Visitors can filter projects by tech stack
 
 ### Experience
 
@@ -99,10 +99,10 @@
 | PROF-03 | Phase 2 | Complete |
 | PROF-04 | Phase 3 | Pending |
 | PROJ-01 | Phase 2 | Complete |
-| PROJ-02 | Phase 2 | Pending |
+| PROJ-02 | Phase 2 | Complete |
 | PROJ-03 | Phase 3 | Pending |
 | PROJ-04 | Phase 3 | Pending |
-| PROJ-05 | Phase 2 | Pending |
+| PROJ-05 | Phase 2 | Complete |
 | EXPR-01 | Phase 2 | Complete |
 | EXPR-02 | Phase 3 | Pending |
 | EDUC-01 | Phase 2 | Complete |

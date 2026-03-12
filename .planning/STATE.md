@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: in-progress
-last_updated: "2026-03-12T18:44:42Z"
+last_updated: "2026-03-12T18:46:00Z"
 progress:
   total_phases: 4
   completed_phases: 1
   total_plans: 6
-  completed_plans: 4
+  completed_plans: 5
 ---
 
 # Project State
@@ -23,28 +23,28 @@ See: .planning/PROJECT.md (updated 2026-03-12)
 ## Current Position
 
 Phase: 2 of 4 (Public Portfolio)
-Plan: 2 of 4 in current phase
+Plan: 3 of 4 in current phase
 Status: In Progress
-Last activity: 2026-03-13 -- Completed 02-02-PLAN.md
+Last activity: 2026-03-13 -- Completed 02-03-PLAN.md
 
-Progress: [████░░░░░░] 40%
+Progress: [█████░░░░░] 50%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 4
-- Average duration: 4.5min
-- Total execution time: 0.30 hours
+- Total plans completed: 5
+- Average duration: 4.2min
+- Total execution time: 0.35 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 01-foundation | 2 | 13min | 6.5min |
-| 02-public-portfolio | 2 | 5min | 2.5min |
+| 02-public-portfolio | 3 | 8min | 2.7min |
 
 **Recent Trend:**
-- Last 5 plans: 01-01 (5min), 01-02 (8min), 02-01 (3min), 02-02 (2min)
+- Last 5 plans: 01-01 (5min), 01-02 (8min), 02-01 (3min), 02-02 (2min), 02-03 (3min)
 - Trend: improving
 
 *Updated after each plan completion*
@@ -67,6 +67,8 @@ Recent decisions affecting current work:
 - 02-01: Manual TypeScript types instead of Supabase CLI-generated types to avoid CLI dependency
 - 02-02: Used buttonVariants with anchor tags instead of Button component for server component compatibility
 - 02-02: Experience section uses separate desktop/mobile layouts via hidden/block breakpoint classes
+- 02-03: Used buttonVariants for anchor links on detail page since base-ui Button lacks asChild prop
+- 02-03: Project card external links use onClick with preventDefault to avoid Link navigation conflict
 
 ### Pending Todos
 
@@ -80,5 +82,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-13
-Stopped at: Completed 02-02-PLAN.md (Portfolio Sections)
+Stopped at: Completed 02-03-PLAN.md (Projects Section)
 Resume file: None
