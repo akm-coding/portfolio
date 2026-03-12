@@ -51,7 +51,7 @@
 
 ### Design & UX
 
-- [ ] **DSGN-01**: Dark/light/system theme toggle with smooth transitions
+- [x] **DSGN-01**: Dark/light/system theme toggle with smooth transitions
 - [ ] **DSGN-02**: Framer Motion page transitions and scroll reveal animations
 - [ ] **DSGN-03**: Responsive design across mobile, tablet, and desktop
 - [ ] **DSGN-04**: SEO optimization with meta tags, Open Graph, and sitemap
@@ -113,7 +113,7 @@
 | CTCT-02 | Phase 2 | Pending |
 | CTCT-03 | Phase 3 | Pending |
 | CTCT-04 | Phase 3 | Pending |
-| DSGN-01 | Phase 1 | Pending |
+| DSGN-01 | Phase 1 | Complete |
 | DSGN-02 | Phase 4 | Pending |
 | DSGN-03 | Phase 2 | Pending |
 | DSGN-04 | Phase 4 | Pending |

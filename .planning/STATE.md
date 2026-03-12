@@ -10,27 +10,27 @@ See: .planning/PROJECT.md (updated 2026-03-12)
 ## Current Position
 
 Phase: 1 of 4 (Foundation)
-Plan: 1 of 2 in current phase
-Status: Executing
-Last activity: 2026-03-13 -- Completed 01-01-PLAN.md
+Plan: 2 of 2 in current phase
+Status: Phase Complete
+Last activity: 2026-03-13 -- Completed 01-02-PLAN.md
 
-Progress: [█░░░░░░░░░] 10%
+Progress: [██░░░░░░░░] 20%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 1
-- Average duration: 5min
-- Total execution time: 0.08 hours
+- Total plans completed: 2
+- Average duration: 6.5min
+- Total execution time: 0.22 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
-| 01-foundation | 1 | 5min | 5min |
+| 01-foundation | 2 | 13min | 6.5min |
 
 **Recent Trend:**
-- Last 5 plans: 01-01 (5min)
+- Last 5 plans: 01-01 (5min), 01-02 (8min)
 - Trend: -
 
 *Updated after each plan completion*
@@ -46,6 +46,9 @@ Recent decisions affecting current work:
 - Research: Foundation-first approach to establish security patterns (auth, RLS) before any data access
 - 01-01: Inlined Supabase client in root middleware for single-pass session refresh + admin protection
 - 01-01: Used window.confirm for logout confirmation to minimize initial dependencies
+- 01-02: Used next-themes with attribute=class and enableSystem for three-state theme support
+- 01-02: Admin forced dark via div.dark wrapper, independent of public theme preference
+- 01-02: Public pages under (public) route group for shared navbar without URL changes
 
 ### Pending Todos
 
@@ -59,5 +62,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-13
-Stopped at: Completed 01-01-PLAN.md (Project Scaffold + Auth)
+Stopped at: Completed 01-02-PLAN.md (Theme & Layout Shell)
 Resume file: None
