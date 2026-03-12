@@ -7,10 +7,10 @@
 
 ### Authentication
 
-- [ ] **AUTH-01**: Admin can log in with email and password
-- [ ] **AUTH-02**: Admin can log in with GitHub OAuth
-- [ ] **AUTH-03**: Admin session persists across browser refresh
-- [ ] **AUTH-04**: All /admin routes are protected by middleware
+- [x] **AUTH-01**: Admin can log in with email and password
+- [x] **AUTH-02**: Admin can log in with GitHub OAuth
+- [x] **AUTH-03**: Admin session persists across browser refresh
+- [x] **AUTH-04**: All /admin routes are protected by middleware
 
 ### Profile
 
@@ -90,10 +90,10 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| AUTH-01 | Phase 1 | Pending |
-| AUTH-02 | Phase 1 | Pending |
-| AUTH-03 | Phase 1 | Pending |
-| AUTH-04 | Phase 1 | Pending |
+| AUTH-01 | Phase 1 | Complete |
+| AUTH-02 | Phase 1 | Complete |
+| AUTH-03 | Phase 1 | Complete |
+| AUTH-04 | Phase 1 | Complete |
 | PROF-01 | Phase 2 | Pending |
 | PROF-02 | Phase 2 | Pending |
 | PROF-03 | Phase 2 | Pending |
