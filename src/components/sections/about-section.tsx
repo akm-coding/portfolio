@@ -26,7 +26,7 @@ export async function AboutSection() {
         </div>
         {profile.resume_url && (
           <div className="mt-8">
-            <Button variant="outline" className="gap-2" render={<a href={profile.resume_url} download />}>
+            <Button variant="outline" className="gap-2" nativeButton={false} render={<a href={profile.resume_url} download />}>
               <Download className="size-4" />
               Download Resume
             </Button>

@@ -37,12 +37,12 @@ export async function HeroSection() {
             )}
             <div className="mt-8 flex flex-wrap gap-4 justify-center md:justify-start">
               {profile.resume_url && (
-                <Button variant="default" size="lg" className="gap-2" render={<a href={profile.resume_url} download />}>
+                <Button variant="default" size="lg" className="gap-2" nativeButton={false} render={<a href={profile.resume_url} download />}>
                   <Download className="size-4" />
                   Download Resume
                 </Button>
               )}
-              <Button variant="outline" size="lg" className="gap-2" render={<a href="#contact" />}>
+              <Button variant="outline" size="lg" className="gap-2" nativeButton={false} render={<a href="#contact" />}>
                 <Mail className="size-4" />
                 Contact Me
               </Button>
