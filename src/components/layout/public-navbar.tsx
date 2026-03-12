@@ -1,6 +1,5 @@
 "use client"
 
-import Link from "next/link"
 import { ThemeToggle } from "@/components/theme/theme-toggle"
 import { MobileNav } from "@/components/layout/mobile-nav"
 
@@ -17,9 +16,9 @@ export function PublicNavbar() {
   return (
     <header className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-sm border-b">
       <nav className="container mx-auto flex h-14 items-center justify-between px-4">
-        <Link href="/" className="text-lg font-bold tracking-tight">
+        <a href="#hero" className="text-lg font-bold tracking-tight">
           AKM
-        </Link>
+        </a>
 
         {/* Desktop nav links */}
         <div className="hidden md:flex items-center gap-6">
