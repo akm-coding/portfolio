@@ -78,7 +78,7 @@
 
 | Feature | Reason |
 |---------|--------|
-| Blog/CMS content | Scope creep — not core to portfolio purpose for v1 |
+| Blog/CMS content | Scope creep -- not core to portfolio purpose for v1 |
 | Multi-language (i18n) | English only, unnecessary complexity |
 | Public user accounts | Only admin (site owner) needs auth |
 | 3D/WebGL effects | Performance risk, high complexity |
@@ -90,39 +90,39 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| AUTH-01 | — | Pending |
-| AUTH-02 | — | Pending |
-| AUTH-03 | — | Pending |
-| AUTH-04 | — | Pending |
-| PROF-01 | — | Pending |
-| PROF-02 | — | Pending |
-| PROF-03 | — | Pending |
-| PROF-04 | — | Pending |
-| PROJ-01 | — | Pending |
-| PROJ-02 | — | Pending |
-| PROJ-03 | — | Pending |
-| PROJ-04 | — | Pending |
-| PROJ-05 | — | Pending |
-| EXPR-01 | — | Pending |
-| EXPR-02 | — | Pending |
-| EDUC-01 | — | Pending |
-| EDUC-02 | — | Pending |
-| SKLL-01 | — | Pending |
-| SKLL-02 | — | Pending |
-| CTCT-01 | — | Pending |
-| CTCT-02 | — | Pending |
-| CTCT-03 | — | Pending |
-| CTCT-04 | — | Pending |
-| DSGN-01 | — | Pending |
-| DSGN-02 | — | Pending |
-| DSGN-03 | — | Pending |
-| DSGN-04 | — | Pending |
+| AUTH-01 | Phase 1 | Pending |
+| AUTH-02 | Phase 1 | Pending |
+| AUTH-03 | Phase 1 | Pending |
+| AUTH-04 | Phase 1 | Pending |
+| PROF-01 | Phase 2 | Pending |
+| PROF-02 | Phase 2 | Pending |
+| PROF-03 | Phase 2 | Pending |
+| PROF-04 | Phase 3 | Pending |
+| PROJ-01 | Phase 2 | Pending |
+| PROJ-02 | Phase 2 | Pending |
+| PROJ-03 | Phase 3 | Pending |
+| PROJ-04 | Phase 3 | Pending |
+| PROJ-05 | Phase 2 | Pending |
+| EXPR-01 | Phase 2 | Pending |
+| EXPR-02 | Phase 3 | Pending |
+| EDUC-01 | Phase 2 | Pending |
+| EDUC-02 | Phase 3 | Pending |
+| SKLL-01 | Phase 2 | Pending |
+| SKLL-02 | Phase 3 | Pending |
+| CTCT-01 | Phase 2 | Pending |
+| CTCT-02 | Phase 2 | Pending |
+| CTCT-03 | Phase 3 | Pending |
+| CTCT-04 | Phase 3 | Pending |
+| DSGN-01 | Phase 1 | Pending |
+| DSGN-02 | Phase 4 | Pending |
+| DSGN-03 | Phase 2 | Pending |
+| DSGN-04 | Phase 4 | Pending |
 
 **Coverage:**
 - v1 requirements: 27 total
-- Mapped to phases: 0
-- Unmapped: 27 ⚠️
+- Mapped to phases: 27
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-03-12*
-*Last updated: 2026-03-12 after initial definition*
+*Last updated: 2026-03-12 after roadmap creation*
