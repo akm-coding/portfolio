@@ -2,8 +2,7 @@ import Image from "next/image"
 import { Download, Mail } from "lucide-react"
 
 import { getProfile } from "@/lib/queries/profile"
-import { buttonVariants } from "@/components/ui/button"
-import { cn } from "@/lib/utils"
+import { Button } from "@/components/ui/button"
 
 export async function HeroSection() {
   const profile = await getProfile()
@@ -38,28 +37,15 @@ export async function HeroSection() {
             )}
             <div className="mt-8 flex flex-wrap gap-4 justify-center md:justify-start">
               {profile.resume_url && (
-                <a
-                  href={profile.resume_url}
-                  download
-                  className={cn(
-                    buttonVariants({ variant: "default", size: "lg" }),
-                    "gap-2"
-                  )}
-                >
+                <Button variant="default" size="lg" className="gap-2" render={<a href={profile.resume_url} download />}>
                   <Download className="size-4" />
                   Download Resume
-                </a>
+                </Button>
               )}
-              <a
-                href="#contact"
-                className={cn(
-                  buttonVariants({ variant: "outline", size: "lg" }),
-                  "gap-2"
-                )}
-              >
+              <Button variant="outline" size="lg" className="gap-2" render={<a href="#contact" />}>
                 <Mail className="size-4" />
                 Contact Me
-              </a>
+              </Button>
             </div>
           </div>
 

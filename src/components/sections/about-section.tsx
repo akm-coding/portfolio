@@ -1,8 +1,7 @@
 import { Download } from "lucide-react"
 
 import { getProfile } from "@/lib/queries/profile"
-import { buttonVariants } from "@/components/ui/button"
-import { cn } from "@/lib/utils"
+import { Button } from "@/components/ui/button"
 
 export async function AboutSection() {
   const profile = await getProfile()
@@ -27,17 +26,10 @@ export async function AboutSection() {
         </div>
         {profile.resume_url && (
           <div className="mt-8">
-            <a
-              href={profile.resume_url}
-              download
-              className={cn(
-                buttonVariants({ variant: "outline" }),
-                "gap-2"
-              )}
-            >
+            <Button variant="outline" className="gap-2" render={<a href={profile.resume_url} download />}>
               <Download className="size-4" />
               Download Resume
-            </a>
+            </Button>
           </div>
         )}
       </div>
