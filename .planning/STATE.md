@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-last_updated: "2026-03-13T14:07:15.105Z"
+last_updated: "2026-03-13T14:11:49.152Z"
 progress:
   total_phases: 3
   completed_phases: 2
   total_plans: 10
-  completed_plans: 7
+  completed_plans: 9
 ---
 
 # Project State
@@ -50,6 +50,7 @@ Progress: [███████---] 70%
 
 *Updated after each plan completion*
 | Phase 03 P01 | 3min | 2 tasks | 18 files |
+| Phase 03 P04 | 2min | 2 tasks | 5 files |
 
 ## Accumulated Context
 
@@ -77,6 +78,8 @@ Recent decisions affecting current work:
 - 03-01: Used AlertDialogTrigger with render prop for delete dialog trigger wrapping
 - 03-01: Profile update uses hidden id field from formData for useActionState compatibility
 - 03-01: Skill reorder is a standalone function (not form action) taking skillId and direction directly
+- [Phase 03]: Sidebar unread count passed as prop from layout rather than client-side fetch
+- [Phase 03]: Action buttons shown only in expanded message row to keep collapsed view clean
 
 ### Pending Todos
 
