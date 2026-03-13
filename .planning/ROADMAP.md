@@ -62,11 +62,13 @@ Plans:
   3. Admin can create, edit, and delete experience and education entries
   4. Admin can add, edit, delete, and reorder skills
   5. Admin can view and manage contact messages, and receives email notification on new submissions
-**Plans**: TBD
+**Plans**: 4 plans
 
 Plans:
-- [ ] 03-01: TBD
-- [ ] 03-02: TBD
+- [ ] 03-01-PLAN.md — Shared admin components (image upload, tag input, delete dialog), Shadcn installs, server actions, and query mutations
+- [ ] 03-02-PLAN.md — Profile edit page and Projects CRUD (list, create, edit, delete with image uploads)
+- [ ] 03-03-PLAN.md — Experience CRUD, Education CRUD, and Skills management with reordering
+- [ ] 03-04-PLAN.md — Messages inbox with expandable rows, dashboard overview with stats, sidebar unread badge
 
 ### Phase 4: Polish & Launch
 **Goal**: The portfolio feels polished with smooth animations, ranks well in search engines, and is deployed to production
@@ -90,5 +92,5 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 |-------|----------------|--------|-----------|
 | 1. Foundation | 2/2 | Complete   | 2026-03-12 |
 | 2. Public Portfolio | 4/4 | Complete   | 2026-03-12 |
-| 3. Admin Dashboard | 0/2 | Not started | - |
+| 3. Admin Dashboard | 0/4 | Not started | - |
 | 4. Polish & Launch | 0/1 | Not started | - |
