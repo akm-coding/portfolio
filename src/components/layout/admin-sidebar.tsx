@@ -34,7 +34,7 @@ const sidebarLinks = [
   { label: "Profile", href: "/admin/profile", icon: User },
 ]
 
-function SidebarContent({ pathname, onLinkClick }: { pathname: string; onLinkClick?: () => void }) {
+function SidebarContent({ pathname, onLinkClick, unreadCount = 0 }: { pathname: string; onLinkClick?: () => void; unreadCount?: number }) {
   return (
     <div className="flex flex-col h-full">
       <div className="p-4 border-b">
@@ -63,6 +63,11 @@ function SidebarContent({ pathname, onLinkClick }: { pathname: string; onLinkCli
             >
               <link.icon className="h-4 w-4" />
               {link.label}
+              {link.label === 'Messages' && unreadCount > 0 && (
+                <span className="ml-auto inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-primary px-1.5 text-xs font-medium text-primary-foreground">
+                  {unreadCount}
+                </span>
+              )}
             </Link>
           )
         })}
@@ -74,7 +79,7 @@ function SidebarContent({ pathname, onLinkClick }: { pathname: string; onLinkCli
   )
 }
 
-export function AdminSidebar() {
+export function AdminSidebar({ unreadCount = 0 }: { unreadCount?: number } = {}) {
   const pathname = usePathname()
   const [open, setOpen] = useState(false)
 
@@ -93,14 +98,14 @@ export function AdminSidebar() {
             <SheetHeader className="sr-only">
               <SheetTitle>Admin Navigation</SheetTitle>
             </SheetHeader>
-            <SidebarContent pathname={pathname} onLinkClick={() => setOpen(false)} />
+            <SidebarContent pathname={pathname} onLinkClick={() => setOpen(false)} unreadCount={unreadCount} />
           </SheetContent>
         </Sheet>
       </div>
 
       {/* Desktop sidebar */}
       <aside className="hidden md:flex md:w-64 md:flex-col md:fixed md:inset-y-0 border-r bg-background">
-        <SidebarContent pathname={pathname} />
+        <SidebarContent pathname={pathname} unreadCount={unreadCount} />
       </aside>
     </>
   )
