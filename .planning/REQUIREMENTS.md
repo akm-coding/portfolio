@@ -30,17 +30,17 @@
 ### Experience
 
 - [x] **EXPR-01**: Work experience displayed as timeline with company, role, dates, and description
-- [ ] **EXPR-02**: Admin can create, edit, and delete experience entries
+- [x] **EXPR-02**: Admin can create, edit, and delete experience entries
 
 ### Education
 
 - [x] **EDUC-01**: Education displayed with institution, degree, field, and dates
-- [ ] **EDUC-02**: Admin can create, edit, and delete education entries
+- [x] **EDUC-02**: Admin can create, edit, and delete education entries
 
 ### Skills
 
 - [x] **SKLL-01**: Skills displayed by category with proficiency indicators
-- [ ] **SKLL-02**: Admin can add, edit, delete, and reorder skills
+- [x] **SKLL-02**: Admin can add, edit, delete, and reorder skills
 
 ### Contact
 
@@ -104,11 +104,11 @@
 | PROJ-04 | Phase 3 | Complete |
 | PROJ-05 | Phase 2 | Complete |
 | EXPR-01 | Phase 2 | Complete |
-| EXPR-02 | Phase 3 | Pending |
+| EXPR-02 | Phase 3 | Complete |
 | EDUC-01 | Phase 2 | Complete |
-| EDUC-02 | Phase 3 | Pending |
+| EDUC-02 | Phase 3 | Complete |
 | SKLL-01 | Phase 2 | Complete |
-| SKLL-02 | Phase 3 | Pending |
+| SKLL-02 | Phase 3 | Complete |
 | CTCT-01 | Phase 2 | Complete |
 | CTCT-02 | Phase 2 | Complete |
 | CTCT-03 | Phase 3 | Complete |
