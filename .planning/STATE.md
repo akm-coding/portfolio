@@ -18,23 +18,23 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-12)
 
 **Core value:** Visitors instantly understand Aung Kaung Myat's capabilities and experience through a polished, animated portfolio that the owner can update anytime without touching code.
-**Current focus:** Phase 3: Admin Dashboard -- Plan 1 complete, 3 remaining
+**Current focus:** Phase 3: Admin Dashboard -- Plan 2 complete, 2 remaining
 
 ## Current Position
 
 Phase: 3 of 4 (Admin Dashboard)
-Plan: 1 of 4 in current phase
+Plan: 2 of 4 in current phase
 Status: In Progress
-Last activity: 2026-03-13 -- Completed 03-01-PLAN.md
+Last activity: 2026-03-13 -- Completed 03-02-PLAN.md
 
-Progress: [███████---] 70%
+Progress: [████████--] 80%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 7
-- Average duration: 4.7min
-- Total execution time: 0.47 hours
+- Total plans completed: 8
+- Average duration: 4.4min
+- Total execution time: 0.58 hours
 
 **By Phase:**
 
@@ -42,14 +42,15 @@ Progress: [███████---] 70%
 |-------|-------|-------|----------|
 | 01-foundation | 2 | 13min | 6.5min |
 | 02-public-portfolio | 4 | 20min | 5.0min |
-| 03-admin-dashboard | 1 | 3min | 3.0min |
+| 03-admin-dashboard | 2 | 5min | 2.5min |
 
 **Recent Trend:**
-- Last 5 plans: 02-01 (3min), 02-02 (2min), 02-03 (3min), 02-04 (12min), 03-01 (3min)
+- Last 5 plans: 02-02 (2min), 02-03 (3min), 02-04 (12min), 03-01 (3min), 03-02 (2min)
 - Trend: stable
 
 *Updated after each plan completion*
 | Phase 03 P01 | 3min | 2 tasks | 18 files |
+| Phase 03 P02 | 2min | 2 tasks | 7 files |
 | Phase 03 P04 | 2min | 2 tasks | 5 files |
 
 ## Accumulated Context
@@ -78,6 +79,9 @@ Recent decisions affecting current work:
 - 03-01: Used AlertDialogTrigger with render prop for delete dialog trigger wrapping
 - 03-01: Profile update uses hidden id field from formData for useActionState compatibility
 - 03-01: Skill reorder is a standalone function (not form action) taking skillId and direction directly
+- 03-02: ProfileForm detects successful save via hasSubmitted flag since updateProfile returns null (no redirect)
+- 03-02: ProjectActions extracted as client component to wrap deleteProject with useTransition and DeleteDialog
+- 03-02: Featured checkbox uses hidden input with onChange updating hidden value for FormData compatibility
 - [Phase 03]: Sidebar unread count passed as prop from layout rather than client-side fetch
 - [Phase 03]: Action buttons shown only in expanded message row to keep collapsed view clean
 
@@ -93,5 +97,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-13
-Stopped at: Completed 03-01-PLAN.md (Admin Shared Infrastructure)
+Stopped at: Completed 03-02-PLAN.md (Profile & Projects Pages)
 Resume file: None
