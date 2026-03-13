@@ -34,3 +34,21 @@ export async function getProjectBySlug(
 
   return data
 }
+
+export async function getProjectById(
+  id: string
+): Promise<(Project & { project_images: ProjectImage[] }) | null> {
+  const supabase = await createClient()
+  const { data, error } = await supabase
+    .from('projects')
+    .select('*, project_images(*)')
+    .eq('id', id)
+    .single()
+
+  if (error) {
+    console.error('Error fetching project by id:', error.message)
+    return null
+  }
+
+  return data
+}

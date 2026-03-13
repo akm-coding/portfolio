@@ -16,3 +16,19 @@ export async function getExperiences(): Promise<Experience[]> {
 
   return data ?? []
 }
+
+export async function getExperienceById(id: string): Promise<Experience | null> {
+  const supabase = await createClient()
+  const { data, error } = await supabase
+    .from('experiences')
+    .select('*')
+    .eq('id', id)
+    .single()
+
+  if (error) {
+    console.error('Error fetching experience by id:', error.message)
+    return null
+  }
+
+  return data
+}

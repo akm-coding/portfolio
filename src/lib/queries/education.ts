@@ -15,3 +15,19 @@ export async function getEducation(): Promise<Education[]> {
 
   return data ?? []
 }
+
+export async function getEducationById(id: string): Promise<Education | null> {
+  const supabase = await createClient()
+  const { data, error } = await supabase
+    .from('education')
+    .select('*')
+    .eq('id', id)
+    .single()
+
+  if (error) {
+    console.error('Error fetching education by id:', error.message)
+    return null
+  }
+
+  return data
+}

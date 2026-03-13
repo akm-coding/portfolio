@@ -16,3 +16,19 @@ export async function getSkills(): Promise<Skill[]> {
 
   return data ?? []
 }
+
+export async function getSkillById(id: string): Promise<Skill | null> {
+  const supabase = await createClient()
+  const { data, error } = await supabase
+    .from('skills')
+    .select('*')
+    .eq('id', id)
+    .single()
+
+  if (error) {
+    console.error('Error fetching skill by id:', error.message)
+    return null
+  }
+
+  return data
+}
