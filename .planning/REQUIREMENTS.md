@@ -46,7 +46,7 @@
 
 - [x] **CTCT-01**: Contact form with name, email, and message fields
 - [x] **CTCT-02**: Social links displayed (GitHub, LinkedIn, email, phone)
-- [x] **CTCT-03**: Admin receives email notification on new contact submission
+- [ ] **CTCT-03**: Admin receives email notification on new contact submission (deferred to v2)
 - [x] **CTCT-04**: Admin can view and manage contact messages in dashboard
 
 ### Design & UX
@@ -111,7 +111,7 @@
 | SKLL-02 | Phase 3 | Complete |
 | CTCT-01 | Phase 2 | Complete |
 | CTCT-02 | Phase 2 | Complete |
-| CTCT-03 | Phase 3 | Complete |
+| CTCT-03 | Phase 3 | Deferred to v2 |
 | CTCT-04 | Phase 3 | Complete |
 | DSGN-01 | Phase 1 | Complete |
 | DSGN-02 | Phase 4 | Pending |
