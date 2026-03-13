@@ -1,0 +1,23 @@
+import { Card, CardContent } from '@/components/ui/card'
+
+interface StatCardProps {
+  title: string
+  value: string | number
+  icon: React.ReactNode
+}
+
+export function StatCard({ title, value, icon }: StatCardProps) {
+  return (
+    <Card>
+      <CardContent className="flex items-center gap-4">
+        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-muted text-muted-foreground">
+          {icon}
+        </div>
+        <div>
+          <p className="text-sm text-muted-foreground">{title}</p>
+          <p className="text-2xl font-bold">{value}</p>
+        </div>
+      </CardContent>
+    </Card>
+  )
+}
