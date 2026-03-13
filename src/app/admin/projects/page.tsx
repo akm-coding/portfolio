@@ -10,7 +10,7 @@ import {
 } from '@/components/ui/table'
 import { ProjectActions } from '@/components/admin/project-actions'
 import Link from 'next/link'
-import { buttonVariants } from '@/components/ui/button'
+import { Button } from '@/components/ui/button'
 import { Plus } from 'lucide-react'
 
 export default async function AdminProjectsPage() {
@@ -20,13 +20,10 @@ export default async function AdminProjectsPage() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <h1 className="text-2xl font-bold">Projects</h1>
-        <Link
-          href="/admin/projects/new"
-          className={buttonVariants({ variant: 'default' })}
-        >
+        <Button nativeButton={false} render={<Link href="/admin/projects/new" />}>
           <Plus className="mr-1 h-4 w-4" />
           Add Project
-        </Link>
+        </Button>
       </div>
 
       {projects.length === 0 ? (

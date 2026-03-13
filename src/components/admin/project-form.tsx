@@ -224,7 +224,7 @@ export function ProjectForm({ project }: ProjectFormProps) {
               ? 'Update Project'
               : 'Create Project'}
         </Button>
-        <Button variant="outline" render={<Link href="/admin/projects" />}>
+        <Button variant="outline" nativeButton={false} render={<Link href="/admin/projects" />}>
           Cancel
         </Button>
       </div>

@@ -29,7 +29,7 @@ export function DeleteDialog({
 }: DeleteDialogProps) {
   return (
     <AlertDialog>
-      <AlertDialogTrigger render={<span />}>
+      <AlertDialogTrigger nativeButton={false} render={<span />}>
         {children}
       </AlertDialogTrigger>
       <AlertDialogContent>

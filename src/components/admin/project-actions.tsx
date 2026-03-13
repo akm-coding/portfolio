@@ -22,7 +22,7 @@ export function ProjectActions({ projectId }: ProjectActionsProps) {
 
   return (
     <div className="flex items-center justify-end gap-2">
-      <Button variant="ghost" size="icon-sm" render={<Link href={`/admin/projects/${projectId}/edit`} />}>
+      <Button variant="ghost" size="icon-sm" nativeButton={false} render={<Link href={`/admin/projects/${projectId}/edit`} />}>
         <Pencil className="h-4 w-4" />
       </Button>
       <DeleteDialog onConfirm={handleDelete} isPending={isPending}>

@@ -25,29 +25,20 @@ export function ProfileForm({ profile }: ProfileFormProps) {
 
     if (state?.error) {
       toast.error(state.error)
-    } else if (state === null && !isPending) {
-      // state reset to null after successful submission (no error returned)
-    }
-  }, [state, isPending])
-
-  // Detect successful save: state transitions from non-null back to null
-  // Since updateProfile returns null on success, we track submissions
-  const [hasSubmitted, setHasSubmitted] = useState(false)
-
-  useEffect(() => {
-    if (hasSubmitted && state === null && !isPending) {
+    } else if (state?.success) {
       toast.success('Profile saved successfully!')
-      setHasSubmitted(false)
     }
-    if (state?.error) {
-      setHasSubmitted(false)
-    }
-  }, [state, isPending, hasSubmitted])
+  }, [state])
+
+  // Sync avatar URL when profile prop updates after revalidation
+  useEffect(() => {
+    setAvatarUrl(profile.avatar_url || '')
+  }, [profile.avatar_url])
 
   return (
     <form
+      key={profile.updated_at}
       action={formAction}
-      onSubmit={() => setHasSubmitted(true)}
       className="max-w-2xl space-y-8"
     >
       <input type="hidden" name="id" value={profile.id} />

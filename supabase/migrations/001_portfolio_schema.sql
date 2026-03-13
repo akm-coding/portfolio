@@ -22,6 +22,7 @@ CREATE TABLE profiles (
 
 ALTER TABLE profiles ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "Public read access" ON profiles FOR SELECT USING (true);
+CREATE POLICY "Authenticated update" ON profiles FOR UPDATE TO authenticated USING (true) WITH CHECK (true);
 
 -- Projects
 CREATE TABLE projects (
@@ -42,6 +43,9 @@ CREATE TABLE projects (
 
 ALTER TABLE projects ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "Public read access" ON projects FOR SELECT USING (true);
+CREATE POLICY "Authenticated insert" ON projects FOR INSERT TO authenticated WITH CHECK (true);
+CREATE POLICY "Authenticated update" ON projects FOR UPDATE TO authenticated USING (true) WITH CHECK (true);
+CREATE POLICY "Authenticated delete" ON projects FOR DELETE TO authenticated USING (true);
 
 -- Project Images (gallery)
 CREATE TABLE project_images (
@@ -55,6 +59,9 @@ CREATE TABLE project_images (
 
 ALTER TABLE project_images ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "Public read access" ON project_images FOR SELECT USING (true);
+CREATE POLICY "Authenticated insert" ON project_images FOR INSERT TO authenticated WITH CHECK (true);
+CREATE POLICY "Authenticated update" ON project_images FOR UPDATE TO authenticated USING (true) WITH CHECK (true);
+CREATE POLICY "Authenticated delete" ON project_images FOR DELETE TO authenticated USING (true);
 
 -- Work Experience
 CREATE TABLE experiences (
@@ -72,6 +79,9 @@ CREATE TABLE experiences (
 
 ALTER TABLE experiences ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "Public read access" ON experiences FOR SELECT USING (true);
+CREATE POLICY "Authenticated insert" ON experiences FOR INSERT TO authenticated WITH CHECK (true);
+CREATE POLICY "Authenticated update" ON experiences FOR UPDATE TO authenticated USING (true) WITH CHECK (true);
+CREATE POLICY "Authenticated delete" ON experiences FOR DELETE TO authenticated USING (true);
 
 -- Education
 CREATE TABLE education (
@@ -89,6 +99,9 @@ CREATE TABLE education (
 
 ALTER TABLE education ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "Public read access" ON education FOR SELECT USING (true);
+CREATE POLICY "Authenticated insert" ON education FOR INSERT TO authenticated WITH CHECK (true);
+CREATE POLICY "Authenticated update" ON education FOR UPDATE TO authenticated USING (true) WITH CHECK (true);
+CREATE POLICY "Authenticated delete" ON education FOR DELETE TO authenticated USING (true);
 
 -- Skills
 CREATE TABLE skills (
@@ -101,6 +114,9 @@ CREATE TABLE skills (
 
 ALTER TABLE skills ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "Public read access" ON skills FOR SELECT USING (true);
+CREATE POLICY "Authenticated insert" ON skills FOR INSERT TO authenticated WITH CHECK (true);
+CREATE POLICY "Authenticated update" ON skills FOR UPDATE TO authenticated USING (true) WITH CHECK (true);
+CREATE POLICY "Authenticated delete" ON skills FOR DELETE TO authenticated USING (true);
 
 -- Contact Messages
 CREATE TABLE messages (
@@ -115,3 +131,5 @@ CREATE TABLE messages (
 ALTER TABLE messages ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "Public read access" ON messages FOR SELECT USING (true);
 CREATE POLICY "Public insert access" ON messages FOR INSERT WITH CHECK (true);
+CREATE POLICY "Authenticated update" ON messages FOR UPDATE TO authenticated USING (true) WITH CHECK (true);
+CREATE POLICY "Authenticated delete" ON messages FOR DELETE TO authenticated USING (true);

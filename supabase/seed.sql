@@ -9,8 +9,8 @@ VALUES (
   'Full Stack Developer',
   'Building modern web applications with React, Next.js, and cloud-native technologies',
   'I am a passionate full stack developer with experience building scalable web applications and cloud-native solutions. I specialize in React, Next.js, TypeScript, and Node.js, with a strong foundation in both frontend and backend development. I enjoy solving complex problems and creating intuitive user experiences that make a real impact.',
-  'https://YOUR_SUPABASE_URL.supabase.co/storage/v1/object/public/avatars/profile.jpg',
-  'https://YOUR_SUPABASE_URL.supabase.co/storage/v1/object/public/documents/resume.pdf',
+  NULL,
+  NULL,
   'aungkaungmyat@example.com',
   '+1 (555) 123-4567',
   'San Francisco, CA',
@@ -29,7 +29,7 @@ VALUES
   ARRAY['React', 'Node.js', 'PostgreSQL', 'WebSocket', 'TypeScript'],
   'https://github.com/aungkaungmyat/taskflow',
   'https://taskflow-demo.vercel.app',
-  'https://YOUR_SUPABASE_URL.supabase.co/storage/v1/object/public/projects/taskflow-thumb.jpg',
+  NULL,
   true,
   1
 ),
@@ -41,7 +41,7 @@ VALUES
   ARRAY['Python', 'FastAPI', 'Redis', 'AWS', 'Docker'],
   'https://github.com/aungkaungmyat/datapulse-api',
   NULL,
-  'https://YOUR_SUPABASE_URL.supabase.co/storage/v1/object/public/projects/datapulse-thumb.jpg',
+  NULL,
   true,
   2
 ),
@@ -53,7 +53,7 @@ VALUES
   ARRAY['Next.js', 'Supabase', 'TypeScript', 'MDX', 'Tailwind CSS'],
   'https://github.com/aungkaungmyat/devblog',
   'https://devblog-demo.vercel.app',
-  'https://YOUR_SUPABASE_URL.supabase.co/storage/v1/object/public/projects/devblog-thumb.jpg',
+  NULL,
   false,
   3
 ),
@@ -65,28 +65,12 @@ VALUES
   ARRAY['Go', 'AWS', 'Docker', 'Terraform'],
   'https://github.com/aungkaungmyat/clouddeploy-cli',
   NULL,
-  'https://YOUR_SUPABASE_URL.supabase.co/storage/v1/object/public/projects/clouddeploy-thumb.jpg',
+  NULL,
   false,
   4
 );
 
--- Project Images (using project slugs to reference -- you'll need to replace with actual UUIDs after projects are inserted)
--- For simplicity, we insert using subqueries to get the project IDs
-INSERT INTO project_images (project_id, image_url, alt_text, display_order)
-VALUES
--- TaskFlow images
-((SELECT id FROM projects WHERE slug = 'taskflow'), 'https://YOUR_SUPABASE_URL.supabase.co/storage/v1/object/public/projects/taskflow-1.jpg', 'TaskFlow Kanban board view', 1),
-((SELECT id FROM projects WHERE slug = 'taskflow'), 'https://YOUR_SUPABASE_URL.supabase.co/storage/v1/object/public/projects/taskflow-2.jpg', 'TaskFlow sprint planning dashboard', 2),
-((SELECT id FROM projects WHERE slug = 'taskflow'), 'https://YOUR_SUPABASE_URL.supabase.co/storage/v1/object/public/projects/taskflow-3.jpg', 'TaskFlow team collaboration view', 3),
--- DataPulse images
-((SELECT id FROM projects WHERE slug = 'datapulse-api'), 'https://YOUR_SUPABASE_URL.supabase.co/storage/v1/object/public/projects/datapulse-1.jpg', 'DataPulse API documentation', 1),
-((SELECT id FROM projects WHERE slug = 'datapulse-api'), 'https://YOUR_SUPABASE_URL.supabase.co/storage/v1/object/public/projects/datapulse-2.jpg', 'DataPulse analytics dashboard', 2),
--- DevBlog images
-((SELECT id FROM projects WHERE slug = 'devblog'), 'https://YOUR_SUPABASE_URL.supabase.co/storage/v1/object/public/projects/devblog-1.jpg', 'DevBlog home page', 1),
-((SELECT id FROM projects WHERE slug = 'devblog'), 'https://YOUR_SUPABASE_URL.supabase.co/storage/v1/object/public/projects/devblog-2.jpg', 'DevBlog post editor with MDX', 2),
--- CloudDeploy images
-((SELECT id FROM projects WHERE slug = 'clouddeploy-cli'), 'https://YOUR_SUPABASE_URL.supabase.co/storage/v1/object/public/projects/clouddeploy-1.jpg', 'CloudDeploy CLI terminal output', 1),
-((SELECT id FROM projects WHERE slug = 'clouddeploy-cli'), 'https://YOUR_SUPABASE_URL.supabase.co/storage/v1/object/public/projects/clouddeploy-2.jpg', 'CloudDeploy infrastructure diagram', 2);
+-- Project Images: Upload via admin dashboard, no seed data needed
 
 -- Work Experience
 INSERT INTO experiences (company, role, description, start_date, end_date, is_current, display_order)

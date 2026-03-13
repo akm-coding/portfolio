@@ -4,9 +4,9 @@ import { createClient } from '@/lib/supabase/server'
 import { revalidatePath } from 'next/cache'
 
 export async function updateProfile(
-  prevState: { error?: string } | null,
+  prevState: { error?: string; success?: boolean } | null,
   formData: FormData
-): Promise<{ error?: string } | null> {
+): Promise<{ error?: string; success?: boolean } | null> {
   const supabase = await createClient()
 
   const full_name = formData.get('full_name') as string
@@ -40,5 +40,5 @@ export async function updateProfile(
 
   revalidatePath('/admin/profile')
   revalidatePath('/')
-  return null
+  return { success: true }
 }
