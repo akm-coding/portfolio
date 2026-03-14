@@ -78,10 +78,11 @@ Plans:
   1. Pages have smooth Framer Motion transitions and sections reveal on scroll
   2. Every public page has proper meta tags, Open Graph data, and the site has a generated sitemap
   3. Site is deployed to Vercel and accessible at a public URL
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 04-01: TBD
+- [ ] 04-01-PLAN.md — Motion library animations: scroll reveal on all sections, hero stagger, scroll-aware navbar, page transitions, hover effects
+- [ ] 04-02-PLAN.md — SEO optimization: metadata with OG tags, dynamic sitemap, robots.txt, manifest, favicon, JSON-LD structured data
 
 ## Progress
 
@@ -93,4 +94,4 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 | 1. Foundation | 2/2 | Complete   | 2026-03-12 |
 | 2. Public Portfolio | 4/4 | Complete   | 2026-03-12 |
 | 3. Admin Dashboard | 0/4 | Not started | - |
-| 4. Polish & Launch | 0/1 | Not started | - |
+| 4. Polish & Launch | 0/2 | Not started | - |
