@@ -36,7 +36,7 @@ export async function middleware(request: NextRequest) {
 
   // Protect /admin routes — only allow the site owner
   if (request.nextUrl.pathname.startsWith('/admin')) {
-    const ADMIN_EMAIL = 'aungkaungmyatyeu123@gmail.com'
+    const ADMIN_EMAIL = process.env.ADMIN_EMAIL
 
     if (!user || user.email !== ADMIN_EMAIL) {
       const url = request.nextUrl.clone()
