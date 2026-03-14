@@ -34,12 +34,16 @@ export async function middleware(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser()
 
-  // Protect /admin routes — redirect unauthenticated users to /login
-  if (request.nextUrl.pathname.startsWith('/admin') && !user) {
-    const url = request.nextUrl.clone()
-    url.pathname = '/login'
-    url.searchParams.set('message', 'Please log in to continue')
-    return NextResponse.redirect(url)
+  // Protect /admin routes — only allow the site owner
+  if (request.nextUrl.pathname.startsWith('/admin')) {
+    const ADMIN_EMAIL = 'aungkaungmyatyeu123@gmail.com'
+
+    if (!user || user.email !== ADMIN_EMAIL) {
+      const url = request.nextUrl.clone()
+      url.pathname = '/login'
+      url.searchParams.set('message', !user ? 'Please log in to continue' : 'Access denied')
+      return NextResponse.redirect(url)
+    }
   }
 
   return supabaseResponse
