@@ -1,14 +1,5 @@
 import { getProjects } from '@/lib/queries/projects'
-import { Badge } from '@/components/ui/badge'
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from '@/components/ui/table'
-import { ProjectActions } from '@/components/admin/project-actions'
+import { ProjectList } from '@/components/admin/project-list'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Plus } from 'lucide-react'
@@ -36,47 +27,7 @@ export default async function AdminProjectsPage() {
           </p>
         </div>
       ) : (
-        <Table>
-          <TableHeader>
-            <TableRow>
-              <TableHead>Title</TableHead>
-              <TableHead>Tech Stack</TableHead>
-              <TableHead>Featured</TableHead>
-              <TableHead className="text-right">Actions</TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {projects.map((project) => (
-              <TableRow key={project.id}>
-                <TableCell className="font-medium">{project.title}</TableCell>
-                <TableCell>
-                  <div className="flex gap-1 flex-wrap">
-                    {project.tech_stack.slice(0, 3).map((tech) => (
-                      <Badge key={tech} variant="secondary">
-                        {tech}
-                      </Badge>
-                    ))}
-                    {project.tech_stack.length > 3 && (
-                      <Badge variant="outline">
-                        +{project.tech_stack.length - 3}
-                      </Badge>
-                    )}
-                  </div>
-                </TableCell>
-                <TableCell>
-                  {project.featured ? (
-                    <Badge variant="default">Featured</Badge>
-                  ) : (
-                    <span className="text-muted-foreground">-</span>
-                  )}
-                </TableCell>
-                <TableCell className="text-right">
-                  <ProjectActions projectId={project.id} />
-                </TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
+        <ProjectList projects={projects} />
       )}
     </div>
   )

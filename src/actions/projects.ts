@@ -115,6 +115,25 @@ export async function updateProject(
   redirect('/admin/projects')
 }
 
+export async function reorderProjects(orderedIds: string[]) {
+  const supabase = await createClient()
+
+  const updates = orderedIds.map((id, index) =>
+    supabase.from('projects').update({ display_order: index }).eq('id', id)
+  )
+
+  const results = await Promise.all(updates)
+  const failed = results.find((r) => r.error)
+  if (failed?.error) {
+    console.error('Error reordering projects:', failed.error.message)
+    return { error: 'Failed to reorder projects.' }
+  }
+
+  revalidatePath('/admin/projects')
+  revalidatePath('/')
+  return null
+}
+
 export async function deleteProject(id: string) {
   const supabase = await createClient()
 
