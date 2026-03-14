@@ -6,10 +6,6 @@ import { EducationSection } from '@/components/sections/education-section'
 import { SkillsSection } from '@/components/sections/skills-section'
 import { ContactSection } from '@/components/sections/contact-section'
 
-export const metadata = {
-  title: 'Aung Kaung Myat - Full Stack Developer',
-  description: 'Portfolio of Aung Kaung Myat - Full Stack Developer',
-}
 
 export default function Home() {
   return (
