@@ -28,6 +28,8 @@ export async function createProject(
       tech_stack: JSON.parse((formData.get('tech_stack') as string) || '[]'),
       github_url: (formData.get('github_url') as string)?.trim() || null,
       live_url: (formData.get('live_url') as string)?.trim() || null,
+      playstore_url: (formData.get('playstore_url') as string)?.trim() || null,
+      appstore_url: (formData.get('appstore_url') as string)?.trim() || null,
       thumbnail_url: (formData.get('thumbnail_url') as string) || null,
       featured: formData.get('featured') === 'true',
     })
@@ -83,6 +85,8 @@ export async function updateProject(
       tech_stack: JSON.parse((formData.get('tech_stack') as string) || '[]'),
       github_url: (formData.get('github_url') as string)?.trim() || null,
       live_url: (formData.get('live_url') as string)?.trim() || null,
+      playstore_url: (formData.get('playstore_url') as string)?.trim() || null,
+      appstore_url: (formData.get('appstore_url') as string)?.trim() || null,
       thumbnail_url: (formData.get('thumbnail_url') as string) || null,
       featured: formData.get('featured') === 'true',
       updated_at: new Date().toISOString(),

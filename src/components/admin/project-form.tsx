@@ -152,6 +152,26 @@ export function ProjectForm({ project }: ProjectFormProps) {
           />
         </div>
 
+        <div className="space-y-2">
+          <Label htmlFor="playstore_url">Play Store URL</Label>
+          <Input
+            id="playstore_url"
+            name="playstore_url"
+            defaultValue={project?.playstore_url || ''}
+            placeholder="https://play.google.com/store/apps/details?id=..."
+          />
+        </div>
+
+        <div className="space-y-2">
+          <Label htmlFor="appstore_url">App Store URL</Label>
+          <Input
+            id="appstore_url"
+            name="appstore_url"
+            defaultValue={project?.appstore_url || ''}
+            placeholder="https://apps.apple.com/app/..."
+          />
+        </div>
+
         <div className="flex items-center gap-2">
           <input
             type="checkbox"

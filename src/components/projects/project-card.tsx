@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
-import { ExternalLink, Github } from "lucide-react"
+import { ExternalLink, Github, Smartphone } from "lucide-react"
 
 import { Badge } from "@/components/ui/badge"
 import {
@@ -52,7 +52,7 @@ export function ProjectCard({ project }: { project: Project }) {
           </div>
         </CardContent>
 
-        {(project.github_url || project.live_url) && (
+        {(project.github_url || project.live_url || project.playstore_url || project.appstore_url) && (
           <CardFooter className="gap-3">
             {project.github_url && (
               <span
@@ -76,6 +76,30 @@ export function ProjectCard({ project }: { project: Project }) {
               >
                 <ExternalLink className="size-3.5" />
                 Demo
+              </span>
+            )}
+            {project.playstore_url && (
+              <span
+                className="inline-flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground transition-colors"
+                onClick={(e) => {
+                  e.preventDefault()
+                  window.open(project.playstore_url!, "_blank")
+                }}
+              >
+                <Smartphone className="size-3.5" />
+                Play Store
+              </span>
+            )}
+            {project.appstore_url && (
+              <span
+                className="inline-flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground transition-colors"
+                onClick={(e) => {
+                  e.preventDefault()
+                  window.open(project.appstore_url!, "_blank")
+                }}
+              >
+                <Smartphone className="size-3.5" />
+                App Store
               </span>
             )}
           </CardFooter>

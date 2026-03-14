@@ -24,6 +24,8 @@ export interface Project {
   tech_stack: string[]
   github_url: string | null
   live_url: string | null
+  playstore_url: string | null
+  appstore_url: string | null
   thumbnail_url: string | null
   featured: boolean
   display_order: number

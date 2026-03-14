@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import { ArrowLeft, ExternalLink, Github } from "lucide-react"
+import { ArrowLeft, ExternalLink, Github, Smartphone } from "lucide-react"
 
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -112,7 +112,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                 ))}
               </div>
 
-              {(project.github_url || project.live_url) && (
+              {(project.github_url || project.live_url || project.playstore_url || project.appstore_url) && (
                 <div className="space-y-2 pt-2">
                   {project.github_url && (
                     <Button
@@ -146,6 +146,40 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                     >
                       <ExternalLink className="size-4" />
                       Live Demo
+                    </Button>
+                  )}
+                  {project.playstore_url && (
+                    <Button
+                      variant="outline"
+                      className="w-full gap-2"
+                      nativeButton={false}
+                      render={
+                        <a
+                          href={project.playstore_url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        />
+                      }
+                    >
+                      <Smartphone className="size-4" />
+                      Play Store
+                    </Button>
+                  )}
+                  {project.appstore_url && (
+                    <Button
+                      variant="outline"
+                      className="w-full gap-2"
+                      nativeButton={false}
+                      render={
+                        <a
+                          href={project.appstore_url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        />
+                      }
+                    >
+                      <Smartphone className="size-4" />
+                      App Store
                     </Button>
                   )}
                 </div>
