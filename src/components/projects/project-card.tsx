@@ -1,8 +1,8 @@
-import Image from "next/image"
-import Link from "next/link"
-import { ExternalLink, Github, Smartphone } from "lucide-react"
+import Image from "next/image";
+import Link from "next/link";
+import { ExternalLink, Github, Smartphone } from "lucide-react";
 
-import { Badge } from "@/components/ui/badge"
+import { Badge } from "@/components/ui/badge";
 import {
   Card,
   CardContent,
@@ -10,13 +10,13 @@ import {
   CardHeader,
   CardTitle,
   CardDescription,
-} from "@/components/ui/card"
-import type { Project } from "@/lib/types/database"
+} from "@/components/ui/card";
+import type { Project } from "@/lib/types/database";
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
     <Link href={`/projects/${project.slug}`} className="group block">
-      <Card className="h-full transition-all duration-300 group-hover:shadow-lg group-hover:scale-[1.02]">
+      <Card className="h-full pt-0 transition-all duration-300 group-hover:shadow-lg group-hover:scale-[1.02]">
         <div className="relative aspect-video overflow-hidden rounded-t-lg">
           {project.thumbnail_url ? (
             <Image
@@ -52,14 +52,14 @@ export function ProjectCard({ project }: { project: Project }) {
           </div>
         </CardContent>
 
-        {(project.github_url || project.live_url || project.playstore_url || project.appstore_url) && (
+        {(project.github_url || project.live_url) && (
           <CardFooter className="gap-3">
             {project.github_url && (
               <span
                 className="inline-flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground transition-colors"
                 onClick={(e) => {
-                  e.preventDefault()
-                  window.open(project.github_url!, "_blank")
+                  e.preventDefault();
+                  window.open(project.github_url!, "_blank");
                 }}
               >
                 <Github className="size-3.5" />
@@ -70,41 +70,17 @@ export function ProjectCard({ project }: { project: Project }) {
               <span
                 className="inline-flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground transition-colors"
                 onClick={(e) => {
-                  e.preventDefault()
-                  window.open(project.live_url!, "_blank")
+                  e.preventDefault();
+                  window.open(project.live_url!, "_blank");
                 }}
               >
                 <ExternalLink className="size-3.5" />
                 Demo
               </span>
             )}
-            {project.playstore_url && (
-              <span
-                className="inline-flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground transition-colors"
-                onClick={(e) => {
-                  e.preventDefault()
-                  window.open(project.playstore_url!, "_blank")
-                }}
-              >
-                <Smartphone className="size-3.5" />
-                Play Store
-              </span>
-            )}
-            {project.appstore_url && (
-              <span
-                className="inline-flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground transition-colors"
-                onClick={(e) => {
-                  e.preventDefault()
-                  window.open(project.appstore_url!, "_blank")
-                }}
-              >
-                <Smartphone className="size-3.5" />
-                App Store
-              </span>
-            )}
           </CardFooter>
         )}
       </Card>
     </Link>
-  )
+  );
 }
