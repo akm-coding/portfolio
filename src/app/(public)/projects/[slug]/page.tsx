@@ -5,9 +5,8 @@ import { notFound } from "next/navigation"
 import { ArrowLeft, ExternalLink, Github } from "lucide-react"
 
 import { Badge } from "@/components/ui/badge"
-import { buttonVariants } from "@/components/ui/button"
+import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { cn } from "@/lib/utils"
 import { ProjectGallery } from "@/components/projects/project-gallery"
 import { getProjectBySlug } from "@/lib/queries/projects"
 
@@ -116,32 +115,38 @@ export default async function ProjectDetailPage({ params }: PageProps) {
               {(project.github_url || project.live_url) && (
                 <div className="space-y-2 pt-2">
                   {project.github_url && (
-                    <a
-                      href={project.github_url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={cn(
-                        buttonVariants({ variant: "outline" }),
-                        "w-full gap-2"
-                      )}
+                    <Button
+                      variant="outline"
+                      className="w-full gap-2"
+                      nativeButton={false}
+                      render={
+                        <a
+                          href={project.github_url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        />
+                      }
                     >
                       <Github className="size-4" />
                       View on GitHub
-                    </a>
+                    </Button>
                   )}
                   {project.live_url && (
-                    <a
-                      href={project.live_url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={cn(
-                        buttonVariants({ variant: "outline" }),
-                        "w-full gap-2"
-                      )}
+                    <Button
+                      variant="outline"
+                      className="w-full gap-2"
+                      nativeButton={false}
+                      render={
+                        <a
+                          href={project.live_url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        />
+                      }
                     >
                       <ExternalLink className="size-4" />
                       Live Demo
-                    </a>
+                    </Button>
                   )}
                 </div>
               )}
