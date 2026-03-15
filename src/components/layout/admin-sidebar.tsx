@@ -9,6 +9,7 @@ import {
   Briefcase,
   GraduationCap,
   Wrench,
+  BarChart3,
   MessageSquare,
   User,
   Menu,
@@ -30,6 +31,7 @@ const sidebarLinks = [
   { label: "Experience", href: "/admin/experience", icon: Briefcase },
   { label: "Education", href: "/admin/education", icon: GraduationCap },
   { label: "Skills", href: "/admin/skills", icon: Wrench },
+  { label: "Statistics", href: "/admin/statistics", icon: BarChart3 },
   { label: "Messages", href: "/admin/messages", icon: MessageSquare },
   { label: "Profile", href: "/admin/profile", icon: User },
 ]
