@@ -118,11 +118,11 @@ Plans:
   2. Public site displays a contribution heatmap graph whose colors match the current dark/light theme
   3. A stats summary row shows total contributions, repos, and stars
   4. GitHub data is ISR-cached so pages load fast and API rate limits are not hit on every request
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 06-01: TBD
-- [ ] 06-02: TBD
+- [ ] 06-01-PLAN.md -- GitHub types, GraphQL query with ISR, repo cards, animated stats row
+- [ ] 06-02-PLAN.md -- Contribution heatmap, section composition, home page wiring
 
 ### Phase 7: Visitor Analytics
 **Goal**: Owner can see how many people visit the portfolio and which pages are most popular, tracked without third-party services
@@ -168,6 +168,6 @@ Phases execute in numeric order: 5 -> 6 -> 7 -> 8
 | 3. Admin Dashboard | v1.0 | 4/4 | Complete | 2026-03-14 |
 | 4. Polish & Launch | v1.0 | 2/2 | Complete | 2026-03-14 |
 | 5. Animated Statistics | v1.1 | 2/2 | Complete | 2026-03-16 |
-| 6. GitHub Integration | v1.1 | 0/? | Not started | - |
+| 6. GitHub Integration | v1.1 | 0/2 | Planning | - |
 | 7. Visitor Analytics | v1.1 | 0/? | Not started | - |
 | 8. Multi-Language Support | v1.1 | 0/? | Not started | - |
