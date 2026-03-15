@@ -56,35 +56,71 @@
 - [x] **DSGN-03**: Responsive design across mobile, tablet, and desktop
 - [x] **DSGN-04**: SEO optimization with meta tags, Open Graph, and sitemap
 
-## v2 Requirements
+## v1.1 Requirements
+
+### Statistics
+
+- [ ] **STAT-01**: Admin can create, edit, delete, and reorder statistic entries (label, value, suffix, icon)
+- [ ] **STAT-02**: Public site displays statistics section with spring-animated count-up triggered on scroll into view
+- [ ] **STAT-03**: Count-up animation triggers only once per page load (not on every scroll)
+- [ ] **STAT-04**: Statistics section displays in responsive grid (stacked on mobile, row on desktop)
+
+### GitHub
+
+- [ ] **GH-01**: Public site displays up to 6 pinned GitHub repositories with name, description, primary language, stars, and forks
+- [ ] **GH-02**: Each pinned repo links to its GitHub page
+- [ ] **GH-03**: Public site displays GitHub contribution heatmap graph
+- [ ] **GH-04**: Contribution graph colors adapt to current dark/light theme
+- [ ] **GH-05**: GitHub stats summary row shows total contributions, repos, and stars
+- [ ] **GH-06**: GitHub data is ISR-cached (not fetched live on every request)
 
 ### Analytics
 
-- **ANLT-01**: View count per project page
-- **ANLT-02**: Basic visitor analytics dashboard
+- [ ] **ANLYT-01**: Page views are tracked on each public page load via same-origin API route
+- [ ] **ANLYT-02**: Unique visitors are approximated via anonymous visitor hash (IP + user-agent)
+- [ ] **ANLYT-03**: Admin dashboard shows total page views and unique visitors with time-range filters (7d, 30d, all)
+- [ ] **ANLYT-04**: Admin dashboard shows per-page view breakdown
+- [ ] **ANLYT-05**: Admin dashboard includes sparkline trend charts showing traffic over time
+- [ ] **ANLYT-06**: Tracking is client-side only (no bot/prefetch pollution)
+
+### Internationalization
+
+- [ ] **I18N-01**: Language toggle button in navbar switches between English and Myanmar
+- [ ] **I18N-02**: Language preference persists across sessions via cookie
+- [ ] **I18N-03**: All static UI text (nav, headings, labels, buttons) is translated to both languages
+- [ ] **I18N-04**: Database content (projects, experience, education) remains untranslated
+- [ ] **I18N-05**: Myanmar text renders correctly with appropriate Unicode font (e.g., Noto Sans Myanmar)
+- [ ] **I18N-06**: No URL/routing changes — locale is cookie-based with no path prefixes
+
+## v2 Requirements
 
 ### Content
 
 - **CONT-01**: Blog/article section with markdown support
 - **CONT-02**: Testimonials section from clients/colleagues
 
-### UX Enhancements
+### Enhancements
 
+- **ENH-01**: Public view counters on project detail pages (social proof)
+- **ENH-02**: Translatable database content (dual-language admin input)
+- **ENH-03**: Contact form submission analytics alongside page views
 - **UXEN-01**: Command palette for quick navigation (Cmd+K)
 - **UXEN-02**: Drag-and-drop reordering in admin
-- **UXEN-03**: GitHub integration to auto-fetch repos
 
 ## Out of Scope
 
 | Feature | Reason |
 |---------|--------|
-| Blog/CMS content | Scope creep -- not core to portfolio purpose for v1 |
-| Multi-language (i18n) | English only, unnecessary complexity |
+| Blog/CMS content | Not core to portfolio purpose |
 | Public user accounts | Only admin (site owner) needs auth |
 | 3D/WebGL effects | Performance risk, high complexity |
 | AI chatbot | Gimmicky, not valuable for portfolio |
-| Real-time features | No need for websockets/realtime in portfolio |
+| Real-time analytics | WebSocket complexity for infrequently checked dashboard |
 | Mobile app | Web-first, responsive handles mobile |
+| Google Analytics / third-party analytics | Privacy concerns, ad-blocker blocked, self-hosted sufficient |
+| URL-based locale routing (/en/, /my/) | Overkill for 2-language portfolio |
+| GitHub OAuth for data fetching | PAT is simpler for single-user data |
+| Detailed analytics (referrers, devices, sessions) | Scope creep; simple page views sufficient |
 
 ## Traceability
 
@@ -118,11 +154,16 @@
 | DSGN-03 | Phase 2 | Complete |
 | DSGN-04 | Phase 4 | Complete |
 
-**Coverage:**
+**v1 Coverage:**
 - v1 requirements: 27 total
 - Mapped to phases: 27
 - Unmapped: 0
 
+**v1.1 Coverage:**
+- v1.1 requirements: 22 total
+- Mapped to phases: 0
+- Unmapped: 22
+
 ---
 *Requirements defined: 2026-03-12*
-*Last updated: 2026-03-12 after roadmap creation*
+*Last updated: 2026-03-15 after v1.1 requirements definition*
