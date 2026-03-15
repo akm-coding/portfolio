@@ -76,6 +76,17 @@ export interface Skill {
   created_at: string
 }
 
+export interface Statistic {
+  id: string
+  label: string
+  value: number
+  suffix: string | null
+  icon_name: string
+  display_order: number
+  created_at: string
+  updated_at: string
+}
+
 export interface Message {
   id: string
   name: string
