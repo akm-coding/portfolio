@@ -27,7 +27,7 @@ export function ContributionHeatmap({ activities }: ContributionHeatmapProps) {
   }
 
   return (
-    <div className="overflow-x-auto">
+    <div className="flex justify-center overflow-x-auto">
       <ActivityCalendar
         data={activities}
         theme={greenTheme}
@@ -35,6 +35,8 @@ export function ContributionHeatmap({ activities }: ContributionHeatmapProps) {
         showTotalCount={false}
         showColorLegend={true}
         showWeekdayLabels={false}
+        blockSize={14}
+        blockMargin={4}
         tooltips={{
           activity: {
             text: (activity) => {

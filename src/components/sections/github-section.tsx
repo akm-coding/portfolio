@@ -33,9 +33,12 @@ export async function GitHubSection() {
             totalStars={data.totalStars}
           />
 
-          <ContributionHeatmap activities={data.contributionDays} />
         </div>
       </ScrollReveal>
+
+      <div className="max-w-6xl mx-auto mt-8 px-4">
+        <ContributionHeatmap activities={data.contributionDays} />
+      </div>
     </section>
   )
 }
