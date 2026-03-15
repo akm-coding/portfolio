@@ -95,3 +95,21 @@ export interface Message {
   is_read: boolean
   created_at: string
 }
+
+export interface PinnedRepo {
+  name: string
+  nameWithOwner: string
+  description: string | null
+  url: string
+  stargazerCount: number
+  forkCount: number
+  primaryLanguage: { name: string; color: string } | null
+}
+
+export interface GitHubData {
+  pinnedRepos: PinnedRepo[]
+  totalContributions: number
+  totalRepos: number
+  totalStars: number
+  contributionDays: Array<{ date: string; count: number; level: 0 | 1 | 2 | 3 | 4 }>
+}
