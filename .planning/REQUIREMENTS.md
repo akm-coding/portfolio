@@ -124,6 +124,8 @@
 
 ## Traceability
 
+### v1 (Phases 1-4)
+
 | Requirement | Phase | Status |
 |-------------|-------|--------|
 | AUTH-01 | Phase 1 | Complete |
@@ -159,11 +161,38 @@
 - Mapped to phases: 27
 - Unmapped: 0
 
+### v1.1 (Phases 5-8)
+
+| Requirement | Phase | Status |
+|-------------|-------|--------|
+| STAT-01 | Phase 5 | Pending |
+| STAT-02 | Phase 5 | Pending |
+| STAT-03 | Phase 5 | Pending |
+| STAT-04 | Phase 5 | Pending |
+| GH-01 | Phase 6 | Pending |
+| GH-02 | Phase 6 | Pending |
+| GH-03 | Phase 6 | Pending |
+| GH-04 | Phase 6 | Pending |
+| GH-05 | Phase 6 | Pending |
+| GH-06 | Phase 6 | Pending |
+| ANLYT-01 | Phase 7 | Pending |
+| ANLYT-02 | Phase 7 | Pending |
+| ANLYT-03 | Phase 7 | Pending |
+| ANLYT-04 | Phase 7 | Pending |
+| ANLYT-05 | Phase 7 | Pending |
+| ANLYT-06 | Phase 7 | Pending |
+| I18N-01 | Phase 8 | Pending |
+| I18N-02 | Phase 8 | Pending |
+| I18N-03 | Phase 8 | Pending |
+| I18N-04 | Phase 8 | Pending |
+| I18N-05 | Phase 8 | Pending |
+| I18N-06 | Phase 8 | Pending |
+
 **v1.1 Coverage:**
 - v1.1 requirements: 22 total
-- Mapped to phases: 0
-- Unmapped: 22
+- Mapped to phases: 22
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-03-12*
-*Last updated: 2026-03-15 after v1.1 requirements definition*
+*Last updated: 2026-03-15 after v1.1 roadmap creation*
