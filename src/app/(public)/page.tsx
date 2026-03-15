@@ -1,6 +1,7 @@
 import { HeroSection } from '@/components/sections/hero-section'
 import { AboutSection } from '@/components/sections/about-section'
 import { StatisticsSection } from '@/components/sections/statistics-section'
+import { GitHubSection } from '@/components/sections/github-section'
 import { ProjectsSection } from '@/components/sections/projects-section'
 import { ExperienceSection } from '@/components/sections/experience-section'
 import { EducationSection } from '@/components/sections/education-section'
@@ -17,6 +18,7 @@ export default function Home() {
         <AboutSection />
       </ScrollReveal>
       <StatisticsSection />
+      <GitHubSection />
       <ScrollReveal>
         <ProjectsSection />
       </ScrollReveal>
