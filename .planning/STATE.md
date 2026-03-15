@@ -1,61 +1,40 @@
 ---
 gsd_state_version: 1.0
-milestone: v1.0
-milestone_name: milestone
-status: complete
-last_updated: "2026-03-14T11:14:46Z"
+milestone: v1.1
+milestone_name: Enhancement
+status: active
+last_updated: "2026-03-15T00:00:00Z"
 progress:
-  total_phases: 4
-  completed_phases: 4
-  total_plans: 12
-  completed_plans: 12
+  total_phases: 0
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
 ---
 
 # Project State
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-03-12)
+See: .planning/PROJECT.md (updated 2026-03-15)
 
 **Core value:** Visitors instantly understand Aung Kaung Myat's capabilities and experience through a polished, animated portfolio that the owner can update anytime without touching code.
-**Current focus:** Phase 4: Polish & Launch -- All 2 plans complete
+**Current focus:** Milestone v1.1 Enhancement — Defining requirements
 
 ## Current Position
 
-Phase: 4 of 4 (Polish & Launch)
-Plan: 2 of 2 in current phase
-Status: Phase Complete
-Last activity: 2026-03-14 -- Completed 04-01-PLAN.md
+Phase: Not started (defining requirements)
+Plan: —
+Status: Defining requirements
+Last activity: 2026-03-15 — Milestone v1.1 started
 
-Progress: [██████████] 100%
+Progress: [░░░░░░░░░░] 0%
 
 ## Performance Metrics
 
-**Velocity:**
+**v1.0 Velocity:**
 - Total plans completed: 12
 - Average duration: 4.2min
 - Total execution time: 0.87 hours
-
-**By Phase:**
-
-| Phase | Plans | Total | Avg/Plan |
-|-------|-------|-------|----------|
-| 01-foundation | 2 | 13min | 6.5min |
-| 02-public-portfolio | 4 | 20min | 5.0min |
-| 03-admin-dashboard | 3 | 8min | 2.7min |
-| 04-polish-launch | 2 | 12min | 6.0min |
-
-**Recent Trend:**
-- Last 5 plans: 03-01 (3min), 03-02 (2min), 03-03 (3min), 04-02 (1min), 04-01 (11min)
-- Trend: stable
-
-*Updated after each plan completion*
-| Phase 03 P01 | 3min | 2 tasks | 18 files |
-| Phase 03 P02 | 2min | 2 tasks | 7 files |
-| Phase 03 P04 | 2min | 2 tasks | 5 files |
-| Phase 03 P03 | 3min | 2 tasks | 13 files |
-| Phase 04 P02 | 1min | 2 tasks | 10 files |
-| Phase 04 P01 | 11min | 2 tasks | 10 files |
 
 ## Accumulated Context
 
@@ -64,39 +43,10 @@ Progress: [██████████] 100%
 Decisions are logged in PROJECT.md Key Decisions table.
 Recent decisions affecting current work:
 
-- Roadmap: 4 phases derived from 27 requirements -- Foundation, Public Portfolio, Admin Dashboard, Polish & Launch
-- Research: Foundation-first approach to establish security patterns (auth, RLS) before any data access
-- 01-01: Inlined Supabase client in root middleware for single-pass session refresh + admin protection
-- 01-01: Used window.confirm for logout confirmation to minimize initial dependencies
-- 01-02: Used next-themes with attribute=class and enableSystem for three-state theme support
-- 01-02: Admin forced dark via div.dark wrapper, independent of public theme preference
-- 01-02: Public pages under (public) route group for shared navbar without URL changes
-- 02-01: Query functions return null/empty arrays on error instead of throwing for graceful degradation
-- 02-01: Manual TypeScript types instead of Supabase CLI-generated types to avoid CLI dependency
-- 02-02: Used buttonVariants with anchor tags instead of Button component for server component compatibility
-- 02-02: Experience section uses separate desktop/mobile layouts via hidden/block breakpoint classes
-- 02-03: Used buttonVariants for anchor links on detail page since base-ui Button lacks asChild prop
-- 02-03: Project card external links use onClick with preventDefault to avoid Link navigation conflict
-- 02-04: Used useActionState (React 19) for contact form state management with server actions
-- 02-04: Replaced buttonVariants() with Button render prop + nativeButton={false} for server components
-- 02-04: AKM logo scrolls to #hero instead of navigating to / for SPA feel
-- 03-01: Used AlertDialogTrigger with render prop for delete dialog trigger wrapping
-- 03-01: Profile update uses hidden id field from formData for useActionState compatibility
-- 03-01: Skill reorder is a standalone function (not form action) taking skillId and direction directly
-- 03-02: ProfileForm detects successful save via hasSubmitted flag since updateProfile returns null (no redirect)
-- 03-02: ProjectActions extracted as client component to wrap deleteProject with useTransition and DeleteDialog
-- 03-02: Featured checkbox uses hidden input with onChange updating hidden value for FormData compatibility
-- [Phase 03]: Sidebar unread count passed as prop from layout rather than client-side fetch
-- [Phase 03]: Action buttons shown only in expanded message row to keep collapsed view clean
-- 03-03: Experience/education use client action wrapper components to keep list pages as server components
-- 03-03: Skills use inline edit mode with editingId state toggling row display vs form
-- 03-03: Skill categories use fixed list via Select dropdown (Frontend, Backend, DevOps, Tools, Languages, Databases, Other)
-- 04-02: Used Next.js ImageResponse API for OG image and favicon generation instead of static files
-- 04-02: OG image auto-generated at /opengraph-image route instead of static /og-image.png
-- 04-02: Favicon uses AK initials (32px); Apple touch icon uses full AKM (180px)
-- 04-01: Used client wrapper pattern to animate server components without converting them
-- 04-01: Hero gets dedicated stagger animation; other sections use ScrollReveal at page level
-- 04-01: Navbar uses useScroll + useMotionValueEvent for scroll-direction-aware hide/show
+- v1.0: 4 phases (Foundation, Public Portfolio, Admin Dashboard, Polish & Launch) completed
+- Font changed from Geist to DM Sans
+- Navbar changed from hide-on-scroll to always-visible sticky
+- v1.1 scope: animated stats, GitHub integration, simple analytics, English/Myanmar i18n
 
 ### Pending Todos
 
@@ -106,9 +56,11 @@ None yet.
 
 - Supabase SDK version: `@supabase/ssr` API may shift -- verify latest docs at implementation time
 - Tailwind CSS 4 + Shadcn UI compatibility: verify components work with v4 CSS-first config
+- GitHub API rate limits for unauthenticated requests (60/hour) — may need token
+- Myanmar font rendering: need to include Myanmar Unicode font
 
 ## Session Continuity
 
-Last session: 2026-03-14
-Stopped at: Completed 04-01-PLAN.md (Animations & Micro-interactions)
+Last session: 2026-03-15
+Stopped at: Milestone v1.1 initialization — defining requirements
 Resume file: None

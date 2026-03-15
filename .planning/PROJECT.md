@@ -12,25 +12,37 @@ Visitors instantly understand Aung Kaung Myat's capabilities and experience thro
 
 ### Validated
 
-(None yet — ship to validate)
+- Dynamic portfolio site with Next.js, Shadcn UI, and Framer Motion — v1.0
+- Dark/light/system theme toggle with smooth transitions — v1.0
+- CRUD management for projects, experience, education, summary, and skills — v1.0
+- Protected admin dashboard with email/password (Supabase Auth) — v1.0
+- Contact form that stores messages in Supabase + social links — v1.0
+- Responsive design across all devices — v1.0
+- SEO optimization with Next.js metadata — v1.0
+- DM Sans font, always-visible sticky navbar — v1.0+
 
 ### Active
 
-- [ ] Dynamic portfolio site with Next.js, Shadcn UI, and Framer Motion
-- [ ] Dark/light/system theme toggle with smooth transitions
-- [ ] CRUD management for projects, experience, education, summary, and skills
-- [ ] Protected admin dashboard with email/password + GitHub OAuth (Supabase Auth)
-- [ ] Contact form that stores messages in Supabase + social links (GitHub, LinkedIn, email, phone)
-- [ ] Responsive design across all devices
-- [ ] SEO optimization with Next.js metadata
-- [ ] Deployment on Vercel
+- [ ] Animated statistics with manual counters managed in admin
+- [ ] GitHub integration: pinned repos + contribution graph
+- [ ] Visitor analytics: simple page views & unique visitors in admin
+- [ ] Multi-language support: English/Myanmar with toggle button in navbar
 
 ### Out of Scope
 
-- Blog/CMS content — not needed for v1, portfolio-focused only
-- Multi-language/i18n — English only for now
-- Analytics dashboard — can add later
+- Blog/CMS content — not needed, portfolio-focused only
 - Public user accounts — only admin (site owner) needs auth
+- Detailed analytics (referrers, device breakdown) — simple page views sufficient for now
+
+## Current Milestone: v1.1 Enhancement
+
+**Goal:** Add animated stats, GitHub integration, visitor analytics, and English/Myanmar language support to make the portfolio more dynamic and accessible.
+
+**Target features:**
+- Animated statistics counters (admin-managed)
+- GitHub pinned repos + contribution heatmap
+- Simple page view tracking with admin dashboard
+- English/Myanmar language toggle
 
 ## Context
 
@@ -58,5 +70,8 @@ Visitors instantly understand Aung Kaung Myat's capabilities and experience thro
 | Shadcn UI over MUI | Tailwind-native, composable, better with Next.js app router | — Pending |
 | Dark/light/system theme toggle | Modern UX expectation, showcases frontend skill | — Pending |
 
+| DM Sans font over Geist | Cleaner, more professional feel for portfolio | — Pending |
+| Always-visible sticky navbar | Better UX than hide-on-scroll for portfolio navigation | — Pending |
+
 ---
-*Last updated: 2026-03-12 after initialization*
+*Last updated: 2026-03-15 after v1.1 milestone start*
