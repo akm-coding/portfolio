@@ -67,12 +67,12 @@
 
 ### GitHub
 
-- [ ] **GH-01**: Public site displays up to 6 pinned GitHub repositories with name, description, primary language, stars, and forks
-- [ ] **GH-02**: Each pinned repo links to its GitHub page
+- [x] **GH-01**: Public site displays up to 6 pinned GitHub repositories with name, description, primary language, stars, and forks
+- [x] **GH-02**: Each pinned repo links to its GitHub page
 - [ ] **GH-03**: Public site displays GitHub contribution heatmap graph
 - [ ] **GH-04**: Contribution graph colors adapt to current dark/light theme
-- [ ] **GH-05**: GitHub stats summary row shows total contributions, repos, and stars
-- [ ] **GH-06**: GitHub data is ISR-cached (not fetched live on every request)
+- [x] **GH-05**: GitHub stats summary row shows total contributions, repos, and stars
+- [x] **GH-06**: GitHub data is ISR-cached (not fetched live on every request)
 
 ### Analytics
 
@@ -169,12 +169,12 @@
 | STAT-02 | Phase 5 | Pending |
 | STAT-03 | Phase 5 | Pending |
 | STAT-04 | Phase 5 | Pending |
-| GH-01 | Phase 6 | Pending |
-| GH-02 | Phase 6 | Pending |
+| GH-01 | Phase 6 | Complete |
+| GH-02 | Phase 6 | Complete |
 | GH-03 | Phase 6 | Pending |
 | GH-04 | Phase 6 | Pending |
-| GH-05 | Phase 6 | Pending |
-| GH-06 | Phase 6 | Pending |
+| GH-05 | Phase 6 | Complete |
+| GH-06 | Phase 6 | Complete |
 | ANLYT-01 | Phase 7 | Pending |
 | ANLYT-02 | Phase 7 | Pending |
 | ANLYT-03 | Phase 7 | Pending |
