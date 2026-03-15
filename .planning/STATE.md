@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.1
 milestone_name: Enhancement
 status: active
-last_updated: "2026-03-15T11:22:55Z"
+last_updated: "2026-03-16T00:00:00Z"
 progress:
   total_phases: 4
-  completed_phases: 0
+  completed_phases: 1
   total_plans: 2
-  completed_plans: 1
+  completed_plans: 2
 ---
 
 # Project State
@@ -18,16 +18,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-15)
 
 **Core value:** Visitors instantly understand Aung Kaung Myat's capabilities and experience through a polished, animated portfolio that the owner can update anytime without touching code.
-**Current focus:** Phase 5 - Animated Statistics
+**Current focus:** Phase 6 - GitHub Integration
 
 ## Current Position
 
-Phase: 5 of 8 (Animated Statistics)
-Plan: 1 of 2 in current phase
-Status: Executing
-Last activity: 2026-03-15 -- Completed 05-01 (statistics data layer + admin page)
+Phase: 6 of 8 (GitHub Integration)
+Plan: 0 of ? in current phase
+Status: Ready to plan
+Last activity: 2026-03-16 -- Completed Phase 5 (Animated Statistics)
 
-Progress: [###########.........] 56% (v1.0 complete, v1.1 plan 1/2 of phase 5 done)
+Progress: [##############......] 69% (v1.0 complete, v1.1 phase 5 done, 3 phases remaining)
 
 ## Performance Metrics
 
@@ -37,8 +37,9 @@ Progress: [###########.........] 56% (v1.0 complete, v1.1 plan 1/2 of phase 5 do
 - Total execution time: 0.87 hours
 
 **v1.1:**
-- Plans completed: 1
+- Plans completed: 2
 - 05-01: 4min (2 tasks, 11 files)
+- 05-02: ~5min (2 tasks, 2 files + fixes)
 
 ## Accumulated Context
 
@@ -55,6 +56,8 @@ Recent decisions affecting current work:
 - [v1.1-05-01]: Used @dnd-kit for drag-and-drop reordering instead of up/down arrows
 - [v1.1-05-01]: Created DynamicIcon component (kebab-case to PascalCase lookup) since lucide-react/dynamic unavailable
 - [v1.1-05-01]: Reorder action takes ordered ID array for cleaner dnd integration
+- [v1.1-05-02]: motion/react useMotionValue + ref pattern for zero re-render count-up
+- [v1.1-05-02]: "By the Numbers" heading added per user preference
 
 ### Pending Todos
 
@@ -68,6 +71,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-15
-Stopped at: Completed 05-01-PLAN.md -- ready for 05-02
-Resume file: None
+Last session: 2026-03-16
+Stopped at: Phase 6 context gathered, ready for planning
+Resume file: .planning/phases/06-github-integration/06-CONTEXT.md
