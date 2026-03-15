@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.1
 milestone_name: Enhancement
 status: active
-last_updated: "2026-03-15T00:00:00Z"
+last_updated: "2026-03-15T11:22:55Z"
 progress:
   total_phases: 4
   completed_phases: 0
-  total_plans: 0
-  completed_plans: 0
+  total_plans: 2
+  completed_plans: 1
 ---
 
 # Project State
@@ -23,11 +23,11 @@ See: .planning/PROJECT.md (updated 2026-03-15)
 ## Current Position
 
 Phase: 5 of 8 (Animated Statistics)
-Plan: 0 of ? in current phase
-Status: Ready to plan
-Last activity: 2026-03-15 -- v1.1 roadmap created (Phases 5-8)
+Plan: 1 of 2 in current phase
+Status: Executing
+Last activity: 2026-03-15 -- Completed 05-01 (statistics data layer + admin page)
 
-Progress: [##########..........] 50% (v1.0 complete, v1.1 starting)
+Progress: [###########.........] 56% (v1.0 complete, v1.1 plan 1/2 of phase 5 done)
 
 ## Performance Metrics
 
@@ -37,8 +37,8 @@ Progress: [##########..........] 50% (v1.0 complete, v1.1 starting)
 - Total execution time: 0.87 hours
 
 **v1.1:**
-- Plans completed: 0
-- No data yet
+- Plans completed: 1
+- 05-01: 4min (2 tasks, 11 files)
 
 ## Accumulated Context
 
@@ -52,6 +52,9 @@ Recent decisions affecting current work:
 - [v1.1]: Only 2 new packages needed: react-github-calendar, next-intl
 - [v1.1]: GitHub data via GraphQL + ISR caching, no database table needed
 - [v1.1]: Analytics self-hosted in Supabase, no third-party service
+- [v1.1-05-01]: Used @dnd-kit for drag-and-drop reordering instead of up/down arrows
+- [v1.1-05-01]: Created DynamicIcon component (kebab-case to PascalCase lookup) since lucide-react/dynamic unavailable
+- [v1.1-05-01]: Reorder action takes ordered ID array for cleaner dnd integration
 
 ### Pending Todos
 
@@ -66,5 +69,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-15
-Stopped at: v1.1 roadmap created -- ready to plan Phase 5
+Stopped at: Completed 05-01-PLAN.md -- ready for 05-02
 Resume file: None

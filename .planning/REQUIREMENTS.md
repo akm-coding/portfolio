@@ -60,7 +60,7 @@
 
 ### Statistics
 
-- [ ] **STAT-01**: Admin can create, edit, delete, and reorder statistic entries (label, value, suffix, icon)
+- [x] **STAT-01**: Admin can create, edit, delete, and reorder statistic entries (label, value, suffix, icon)
 - [ ] **STAT-02**: Public site displays statistics section with spring-animated count-up triggered on scroll into view
 - [ ] **STAT-03**: Count-up animation triggers only once per page load (not on every scroll)
 - [ ] **STAT-04**: Statistics section displays in responsive grid (stacked on mobile, row on desktop)
@@ -165,7 +165,7 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| STAT-01 | Phase 5 | Pending |
+| STAT-01 | Phase 5 | Complete |
 | STAT-02 | Phase 5 | Pending |
 | STAT-03 | Phase 5 | Pending |
 | STAT-04 | Phase 5 | Pending |
