@@ -87,7 +87,7 @@ Plans:
 
 **Milestone Goal:** Add animated stats, GitHub integration, visitor analytics, and English/Myanmar language support to make the portfolio more dynamic and accessible.
 
-- [ ] **Phase 5: Animated Statistics** - Admin-managed counters with spring-animated count-up on scroll
+- [x] **Phase 5: Animated Statistics** - Admin-managed counters with spring-animated count-up on scroll
 - [ ] **Phase 6: GitHub Integration** - Pinned repos display and contribution heatmap with ISR caching
 - [ ] **Phase 7: Visitor Analytics** - Page view tracking with admin dashboard and time-range filters
 - [ ] **Phase 8: Multi-Language Support** - English/Myanmar toggle with cookie-based persistence
@@ -106,8 +106,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 05-01-PLAN.md -- Database, types, queries, server actions, and admin CRUD page with drag-and-drop
-- [ ] 05-02-PLAN.md -- Public animated statistics section with count-up on scroll
+- [x] 05-01-PLAN.md -- Database, types, queries, server actions, and admin CRUD page with drag-and-drop
+- [x] 05-02-PLAN.md -- Public animated statistics section with count-up on scroll
 
 ### Phase 6: GitHub Integration
 **Goal**: Visitors see the owner's GitHub activity -- pinned repos and contribution history -- without stale or rate-limited data
@@ -167,7 +167,7 @@ Phases execute in numeric order: 5 -> 6 -> 7 -> 8
 | 2. Public Portfolio | v1.0 | 4/4 | Complete | 2026-03-12 |
 | 3. Admin Dashboard | v1.0 | 4/4 | Complete | 2026-03-14 |
 | 4. Polish & Launch | v1.0 | 2/2 | Complete | 2026-03-14 |
-| 5. Animated Statistics | v1.1 | 0/2 | Planning complete | - |
+| 5. Animated Statistics | v1.1 | 2/2 | Complete | 2026-03-16 |
 | 6. GitHub Integration | v1.1 | 0/? | Not started | - |
 | 7. Visitor Analytics | v1.1 | 0/? | Not started | - |
 | 8. Multi-Language Support | v1.1 | 0/? | Not started | - |
