@@ -103,11 +103,11 @@ Plans:
   2. Admin can edit, delete, and reorder statistics, and changes reflect on the public site
   3. Statistics count up with spring animation when scrolled into view for the first time
   4. Statistics section displays responsively -- stacked on mobile, row on desktop
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 05-01: TBD
-- [ ] 05-02: TBD
+- [ ] 05-01-PLAN.md -- Database, types, queries, server actions, and admin CRUD page with drag-and-drop
+- [ ] 05-02-PLAN.md -- Public animated statistics section with count-up on scroll
 
 ### Phase 6: GitHub Integration
 **Goal**: Visitors see the owner's GitHub activity -- pinned repos and contribution history -- without stale or rate-limited data
@@ -167,7 +167,7 @@ Phases execute in numeric order: 5 -> 6 -> 7 -> 8
 | 2. Public Portfolio | v1.0 | 4/4 | Complete | 2026-03-12 |
 | 3. Admin Dashboard | v1.0 | 4/4 | Complete | 2026-03-14 |
 | 4. Polish & Launch | v1.0 | 2/2 | Complete | 2026-03-14 |
-| 5. Animated Statistics | v1.1 | 0/? | Not started | - |
+| 5. Animated Statistics | v1.1 | 0/2 | Planning complete | - |
 | 6. GitHub Integration | v1.1 | 0/? | Not started | - |
 | 7. Visitor Analytics | v1.1 | 0/? | Not started | - |
 | 8. Multi-Language Support | v1.1 | 0/? | Not started | - |
