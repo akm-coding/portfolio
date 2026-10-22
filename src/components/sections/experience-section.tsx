@@ -1,12 +1,6 @@
-import { Briefcase, Calendar } from "lucide-react"
-
 import { getExperiences } from "@/lib/queries/experiences"
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Section } from "@/components/layout/section"
 import { cn } from "@/lib/utils"
 
 function formatDate(dateString: string): string {
@@ -16,109 +10,100 @@ function formatDate(dateString: string): string {
   })
 }
 
+function formatDuration(start: string, end: string | null): string {
+  const startDate = new Date(start)
+  const endDate = end ? new Date(end) : new Date()
+  const months =
+    (endDate.getFullYear() - startDate.getFullYear()) * 12 +
+    (endDate.getMonth() - startDate.getMonth()) +
+    1
+  const years = Math.floor(months / 12)
+  const rest = months % 12
+  return [years && `${years} yr${years > 1 ? "s" : ""}`, rest && `${rest} mo`]
+    .filter(Boolean)
+    .join(" ")
+}
+
+// Descriptions are stored as free text; treat each non-empty line as a bullet,
+// stripping any leading "-", "•" or "*" the author typed.
+function toBullets(description: string): string[] {
+  return description
+    .split("\n")
+    .map((line) => line.replace(/^\s*[-•*]\s*/, "").trim())
+    .filter(Boolean)
+}
+
 export async function ExperienceSection() {
   const experiences = await getExperiences()
 
   if (experiences.length === 0) return null
 
   return (
-    <section id="experience" className="py-16 md:py-24">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold tracking-tight mb-8 md:mb-12">
-          Experience
-        </h2>
+    <Section
+      id="experience"
+      eyebrow="Experience"
+      title="Where I've worked"
+      description="Building production mobile and web apps across agencies and product teams."
+    >
+      <ol className="relative space-y-10 border-l pl-8">
+        {experiences.map((exp) => {
+          const bullets = exp.description ? toBullets(exp.description) : []
+          const end = exp.is_current ? null : exp.end_date
 
-        {/* Desktop: alternating timeline */}
-        <div className="relative hidden md:block">
-          {/* Vertical center line */}
-          <div className="absolute left-1/2 top-0 bottom-0 w-px bg-border" />
-
-          <div className="space-y-12">
-            {experiences.map((exp, index) => {
-              const isLeft = index % 2 === 0
-
-              return (
-                <div key={exp.id} className="relative flex items-start">
-                  {/* Timeline dot */}
-                  <div className="absolute left-1/2 top-6 -translate-x-1/2 z-10">
-                    <div className="w-3 h-3 rounded-full bg-primary ring-4 ring-background" />
-                  </div>
-
-                  {/* Card positioned on alternating sides */}
-                  <div
-                    className={cn(
-                      "w-1/2",
-                      isLeft ? "pr-12" : "pl-12 ml-auto"
-                    )}
-                  >
-                    <Card>
-                      <CardHeader>
-                        <CardTitle className="flex items-center gap-2">
-                          <Briefcase className="size-4 text-muted-foreground" />
-                          {exp.company}
-                        </CardTitle>
-                      </CardHeader>
-                      <CardContent className="space-y-2">
-                        <p className="font-semibold text-primary">{exp.role}</p>
-                        <p className="flex items-center gap-1.5 text-sm text-muted-foreground">
-                          <Calendar className="size-3.5" />
-                          {formatDate(exp.start_date)} –{" "}
-                          {exp.is_current
-                            ? "Present"
-                            : exp.end_date
-                              ? formatDate(exp.end_date)
-                              : ""}
-                        </p>
-                        {exp.description && (
-                          <p className="text-sm text-muted-foreground leading-relaxed pt-1">
-                            {exp.description}
-                          </p>
-                        )}
-                      </CardContent>
-                    </Card>
-                  </div>
+          return (
+            <li key={exp.id} className="relative">
+              <span
+                className={cn(
+                  "absolute top-1.5 -left-[37px] size-[9px] rounded-full ring-4 ring-background",
+                  exp.is_current ? "bg-emerald-500" : "bg-muted-foreground/40"
+                )}
+              />
+              <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
+                <div>
+                  <h3 className="text-lg font-semibold leading-tight">
+                    {exp.role}
+                  </h3>
+                  <p className="text-muted-foreground">{exp.company}</p>
                 </div>
-              )
-            })}
-          </div>
-        </div>
-
-        {/* Mobile: stacked with left border */}
-        <div className="md:hidden space-y-6">
-          {experiences.map((exp) => (
-            <div
-              key={exp.id}
-              className="border-l-2 border-primary pl-4 ml-2"
-            >
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <Briefcase className="size-4 text-muted-foreground" />
-                    {exp.company}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-2">
-                  <p className="font-semibold text-primary">{exp.role}</p>
-                  <p className="flex items-center gap-1.5 text-sm text-muted-foreground">
-                    <Calendar className="size-3.5" />
-                    {formatDate(exp.start_date)} –{" "}
-                    {exp.is_current
-                      ? "Present"
-                      : exp.end_date
-                        ? formatDate(exp.end_date)
-                        : ""}
-                  </p>
-                  {exp.description && (
-                    <p className="text-sm text-muted-foreground leading-relaxed pt-1">
-                      {exp.description}
-                    </p>
+                <div className="flex items-center gap-2 text-sm text-muted-foreground sm:shrink-0">
+                  {exp.is_current && (
+                    <Badge
+                      variant="outline"
+                      className="border-emerald-500/30 text-emerald-700 dark:text-emerald-400"
+                    >
+                      Current
+                    </Badge>
                   )}
-                </CardContent>
-              </Card>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
+                  <span className="font-mono text-xs">
+                    {formatDate(exp.start_date)} –{" "}
+                    {end ? formatDate(end) : "Present"}
+                  </span>
+                  <span className="text-xs text-muted-foreground/70">
+                    · {formatDuration(exp.start_date, end)}
+                  </span>
+                </div>
+              </div>
+
+              {bullets.length > 1 ? (
+                <ul className="mt-3 space-y-1.5 text-sm leading-relaxed text-muted-foreground md:text-base">
+                  {bullets.map((bullet, i) => (
+                    <li key={i} className="flex gap-2">
+                      <span className="mt-2.5 size-1 shrink-0 rounded-full bg-muted-foreground/60" />
+                      {bullet}
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                bullets[0] && (
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground md:text-base">
+                    {bullets[0]}
+                  </p>
+                )
+              )}
+            </li>
+          )
+        })}
+      </ol>
+    </Section>
   )
 }

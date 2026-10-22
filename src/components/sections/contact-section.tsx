@@ -1,96 +1,106 @@
+import { FileText, Github, Linkedin, Mail, MapPin, Phone } from 'lucide-react'
+
 import { getProfile } from '@/lib/queries/profile'
 import { ContactForm } from '@/components/contact/contact-form'
-import { Github, Linkedin, Mail, Phone, MapPin } from 'lucide-react'
+import { CopyEmailButton } from '@/components/contact/copy-email-button'
+import { Section } from '@/components/layout/section'
+import { Button } from '@/components/ui/button'
+import { siteConfig } from '@/lib/site-config'
 
 export async function ContactSection() {
   const profile = await getProfile()
 
   return (
-    <section id="contact" className="py-16 md:py-24">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold tracking-tight mb-8 md:mb-12">
-          Get In Touch
-        </h2>
-        <div className="grid gap-8 md:gap-12 md:grid-cols-2">
-          {/* Contact Form */}
-          <div>
-            <ContactForm />
-          </div>
-
-          {/* Contact Info & Social Links */}
-          <div className="space-y-8">
-            {profile && (
-              <>
-                <div className="space-y-4">
-                  <h3 className="text-lg font-semibold">Contact Information</h3>
-                  <div className="space-y-3">
-                    {profile.email && (
-                      <a
-                        href={`mailto:${profile.email}`}
-                        className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors"
-                      >
-                        <Mail className="h-5 w-5" />
-                        <span>{profile.email}</span>
-                      </a>
-                    )}
-                    {profile.phone && (
-                      <a
-                        href={`tel:${profile.phone}`}
-                        className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors"
-                      >
-                        <Phone className="h-5 w-5" />
-                        <span>{profile.phone}</span>
-                      </a>
-                    )}
-                    {profile.location && (
-                      <div className="flex items-center gap-3 text-muted-foreground">
-                        <MapPin className="h-5 w-5" />
-                        <span>{profile.location}</span>
-                      </div>
-                    )}
-                  </div>
-                </div>
-
-                {(profile.github_url || profile.linkedin_url) && (
-                  <div className="space-y-4">
-                    <h3 className="text-lg font-semibold">Social Links</h3>
-                    <div className="flex gap-3">
-                      {profile.github_url && (
-                        <a
-                          href={profile.github_url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="rounded-full w-10 h-10 flex items-center justify-center bg-[#333] hover:bg-[#24292e] text-white transition-colors"
-                          aria-label="GitHub"
-                        >
-                          <Github className="h-5 w-5" />
-                        </a>
-                      )}
-                      {profile.linkedin_url && (
-                        <a
-                          href={profile.linkedin_url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="rounded-full w-10 h-10 flex items-center justify-center bg-[#0077B5] hover:bg-[#005885] text-white transition-colors"
-                          aria-label="LinkedIn"
-                        >
-                          <Linkedin className="h-5 w-5" />
-                        </a>
-                      )}
-                    </div>
-                  </div>
+    <Section
+      id="contact"
+      eyebrow="Contact"
+      title="Let's work together"
+      description={
+        siteConfig.availability.open
+          ? `I'm currently ${siteConfig.availability.label.toLowerCase()} (${siteConfig.availability.detail}). I usually reply within a day.`
+          : 'Have a question or just want to say hi? I usually reply within a day.'
+      }
+    >
+      <div className="grid gap-8 md:grid-cols-5 md:gap-12">
+        <div className="space-y-6 md:col-span-2">
+          {profile ? (
+            <>
+              <ul className="space-y-3 text-sm">
+                {profile.email && (
+                  <li className="flex items-center gap-3">
+                    <Mail className="size-4 shrink-0 text-muted-foreground" />
+                    <a
+                      href={`mailto:${profile.email}`}
+                      className="truncate font-medium hover:underline"
+                    >
+                      {profile.email}
+                    </a>
+                    <CopyEmailButton email={profile.email} />
+                  </li>
                 )}
-              </>
-            )}
+                {profile.phone && (
+                  <li className="flex items-center gap-3">
+                    <Phone className="size-4 shrink-0 text-muted-foreground" />
+                    <a href={`tel:${profile.phone}`} className="hover:underline">
+                      {profile.phone}
+                    </a>
+                  </li>
+                )}
+                {profile.location && (
+                  <li className="flex items-center gap-3 text-muted-foreground">
+                    <MapPin className="size-4 shrink-0" />
+                    {profile.location} · {siteConfig.timezone}
+                  </li>
+                )}
+              </ul>
 
-            {!profile && (
-              <p className="text-muted-foreground">
-                Contact information will appear here once a profile is set up.
-              </p>
-            )}
-          </div>
+              <div className="flex flex-wrap gap-2">
+                {profile.resume_url && (
+                  <Button
+                    variant="outline"
+                    className="gap-2"
+                    nativeButton={false}
+                    render={<a href={profile.resume_url} target="_blank" rel="noopener noreferrer" />}
+                  >
+                    <FileText className="size-4" />
+                    Résumé
+                  </Button>
+                )}
+                {profile.linkedin_url && (
+                  <Button
+                    variant="outline"
+                    className="gap-2"
+                    nativeButton={false}
+                    render={<a href={profile.linkedin_url} target="_blank" rel="noopener noreferrer" />}
+                  >
+                    <Linkedin className="size-4" />
+                    LinkedIn
+                  </Button>
+                )}
+                {profile.github_url && (
+                  <Button
+                    variant="outline"
+                    className="gap-2"
+                    nativeButton={false}
+                    render={<a href={profile.github_url} target="_blank" rel="noopener noreferrer" />}
+                  >
+                    <Github className="size-4" />
+                    GitHub
+                  </Button>
+                )}
+              </div>
+            </>
+          ) : (
+            <p className="text-muted-foreground">
+              Contact information will appear here once a profile is set up.
+            </p>
+          )}
+        </div>
+
+        <div className="rounded-xl border bg-card p-5 md:col-span-3 md:p-6">
+          <ContactForm />
         </div>
       </div>
-    </section>
+    </Section>
   )
 }

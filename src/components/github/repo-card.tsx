@@ -3,7 +3,7 @@ import { ExternalLink, Star, GitFork } from 'lucide-react'
 
 export function RepoCard({ repo }: { repo: PinnedRepo }) {
   return (
-    <div className="border rounded-lg p-4 shadow-sm">
+    <div className="rounded-xl border bg-card p-4 transition-colors hover:border-foreground/20">
       <div className="flex items-start justify-between gap-2">
         <h3 className="text-sm font-semibold text-primary truncate">
           {repo.nameWithOwner}

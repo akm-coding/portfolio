@@ -2,7 +2,7 @@ import { getGitHubData } from '@/lib/queries/github'
 import { RepoCard } from '@/components/github/repo-card'
 import { GitHubStatsRow } from '@/components/github/github-stats-row'
 import { ContributionHeatmap } from '@/components/github/contribution-heatmap'
-import { ScrollReveal } from '@/components/motion/scroll-reveal'
+import { Section } from '@/components/layout/section'
 
 export async function GitHubSection() {
   const data = await getGitHubData()
@@ -12,33 +12,29 @@ export async function GitHubSection() {
   }
 
   return (
-    <section className="py-16 px-4">
-      <ScrollReveal>
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold tracking-tight mb-8">
-            My GitHub Activity
-          </h2>
-
-          {data.pinnedRepos.length > 0 && (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {data.pinnedRepos.map((repo) => (
-                <RepoCard key={repo.nameWithOwner} repo={repo} />
-              ))}
-            </div>
-          )}
-
-          <GitHubStatsRow
-            totalContributions={data.totalContributions}
-            totalRepos={data.totalRepos}
-            totalStars={data.totalStars}
-          />
-
+    <Section
+      id="github"
+      eyebrow="Open source"
+      title="GitHub activity"
+      description="Pinned repositories and a year of contributions."
+    >
+      {data.pinnedRepos.length > 0 && (
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {data.pinnedRepos.map((repo) => (
+            <RepoCard key={repo.nameWithOwner} repo={repo} />
+          ))}
         </div>
-      </ScrollReveal>
+      )}
 
-      <div className="max-w-6xl mx-auto mt-8 px-4">
+      <GitHubStatsRow
+        totalContributions={data.totalContributions}
+        totalRepos={data.totalRepos}
+        totalStars={data.totalStars}
+      />
+
+      <div className="rounded-xl border p-4">
         <ContributionHeatmap activities={data.contributionDays} />
       </div>
-    </section>
+    </Section>
   )
 }

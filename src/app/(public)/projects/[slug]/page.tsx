@@ -47,7 +47,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
   const images = project.project_images ?? []
 
   return (
-    <div className="container mx-auto px-4 py-8 md:py-12">
+    <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6 md:py-12">
       <Link
         href="/#projects"
         className="mb-6 inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"

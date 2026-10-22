@@ -1,104 +1,221 @@
 "use client"
 
 import Image from "next/image"
-import { Download, Mail } from "lucide-react"
+import { ArrowRight, FileText, Github, Linkedin, Mail, MapPin } from "lucide-react"
 import { motion } from "motion/react"
+
+import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
+import { CountUp } from "@/components/motion/count-up"
 import { heroContainerVariants, heroItemVariants } from "@/lib/motion"
+import { siteConfig } from "@/lib/site-config"
+import { cn } from "@/lib/utils"
+import type { Profile, Statistic } from "@/lib/types/database"
 
 interface HeroSectionAnimatedProps {
-  fullName: string
-  title: string
-  tagline: string | null
-  avatarUrl: string | null
-  resumeUrl: string | null
+  profile: Profile
+  statistics: Statistic[]
   initials: string
 }
 
 export function HeroSectionAnimated({
-  fullName,
-  title,
-  tagline,
-  avatarUrl,
-  resumeUrl,
+  profile,
+  statistics,
   initials,
 }: HeroSectionAnimatedProps) {
+  const socials = [
+    profile.github_url && {
+      label: "GitHub",
+      href: profile.github_url,
+      icon: Github,
+    },
+    profile.linkedin_url && {
+      label: "LinkedIn",
+      href: profile.linkedin_url,
+      icon: Linkedin,
+    },
+    profile.email && {
+      label: profile.email,
+      href: `mailto:${profile.email}`,
+      icon: Mail,
+    },
+  ].filter(Boolean) as { label: string; href: string; icon: typeof Mail }[]
+
   return (
-    <section
-      id="hero"
-      className="min-h-[calc(100vh-3.5rem)] flex items-center"
-    >
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
-          {/* Text content */}
+    <section id="hero" className="relative overflow-hidden">
+      {/* Subtle grid backdrop */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(to_right,var(--border)_1px,transparent_1px),linear-gradient(to_bottom,var(--border)_1px,transparent_1px)] bg-[size:48px_48px] [mask-image:radial-gradient(ellipse_at_top,black_20%,transparent_70%)] opacity-60"
+      />
+
+      <div className="mx-auto max-w-5xl px-4 pt-16 pb-12 sm:px-6 md:pt-24">
+        <div className="grid items-center gap-10 md:grid-cols-[1fr_auto]">
           <motion.div
-            className="order-2 md:order-1 text-center md:text-left"
             variants={heroContainerVariants}
             initial="hidden"
             animate="visible"
           >
-            <motion.h1
-              className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight"
+            <motion.div
               variants={heroItemVariants}
+              className="flex flex-wrap items-center gap-2"
             >
-              {fullName}
+              {siteConfig.availability.open && (
+                <Badge
+                  variant="outline"
+                  className="h-6 gap-2 border-emerald-500/30 bg-emerald-500/10 px-2.5 text-emerald-700 dark:text-emerald-400"
+                >
+                  <span className="relative flex size-2">
+                    <span className="absolute inline-flex size-full animate-ping rounded-full bg-emerald-500 opacity-75" />
+                    <span className="relative inline-flex size-2 rounded-full bg-emerald-500" />
+                  </span>
+                  {siteConfig.availability.label}
+                </Badge>
+              )}
+              {profile.location && (
+                <span className="inline-flex items-center gap-1 text-sm text-muted-foreground">
+                  <MapPin className="size-3.5" />
+                  {profile.location}
+                  <span className="text-muted-foreground/60">
+                    · {siteConfig.timezone}
+                  </span>
+                </span>
+              )}
+            </motion.div>
+
+            <motion.h1
+              variants={heroItemVariants}
+              className="mt-6 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl"
+            >
+              {profile.full_name}
             </motion.h1>
             <motion.p
-              className="mt-4 text-xl md:text-2xl text-muted-foreground"
               variants={heroItemVariants}
+              className="mt-3 text-xl font-medium text-foreground/80 sm:text-2xl"
             >
-              {title}
+              {profile.title}
             </motion.p>
-            {tagline && (
+            {profile.tagline && (
               <motion.p
-                className="mt-3 text-lg text-muted-foreground/80"
                 variants={heroItemVariants}
+                className="mt-4 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg"
               >
-                {tagline}
+                {profile.tagline}
               </motion.p>
             )}
+
             <motion.div
-              className="mt-8 flex flex-wrap gap-4 justify-center md:justify-start"
               variants={heroItemVariants}
+              className="mt-8 flex flex-wrap items-center gap-3"
             >
-              {resumeUrl && (
-                <Button variant="default" size="lg" className="gap-2" nativeButton={false} render={<a href={resumeUrl} download />}>
-                  <Download className="size-4" />
-                  Download Resume
+              {profile.resume_url && (
+                <Button
+                  size="lg"
+                  className="h-10 gap-2 px-4"
+                  nativeButton={false}
+                  render={
+                    <a
+                      href={profile.resume_url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    />
+                  }
+                >
+                  <FileText className="size-4" />
+                  View Résumé
                 </Button>
               )}
-              <Button variant="outline" size="lg" className="gap-2" nativeButton={false} render={<a href="#contact" />}>
-                <Mail className="size-4" />
-                Contact Me
+              <Button
+                variant="outline"
+                size="lg"
+                className="group h-10 gap-2 px-4"
+                nativeButton={false}
+                render={<a href="#contact" />}
+              >
+                Get in touch
+                <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
               </Button>
+
+              <div className="flex items-center gap-1 sm:ml-2">
+                {socials.map(({ label, href, icon: Icon }) => (
+                  <Tooltip key={href}>
+                    <TooltipTrigger
+                      render={
+                        <Button
+                          variant="ghost"
+                          size="icon"
+                          nativeButton={false}
+                          render={
+                            <a
+                              href={href}
+                              target={href.startsWith("mailto:") ? undefined : "_blank"}
+                              rel="noopener noreferrer"
+                              aria-label={label}
+                            />
+                          }
+                        />
+                      }
+                    >
+                      <Icon className="size-4" />
+                    </TooltipTrigger>
+                    <TooltipContent>{label}</TooltipContent>
+                  </Tooltip>
+                ))}
+              </div>
             </motion.div>
           </motion.div>
 
-          {/* Profile photo */}
           <motion.div
-            className="order-1 md:order-2 flex justify-center"
+            className="order-first md:order-last"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
           >
-            {avatarUrl ? (
+            {profile.avatar_url ? (
               <Image
-                src={avatarUrl}
-                alt={fullName}
-                width={400}
-                height={400}
+                src={profile.avatar_url}
+                alt={profile.full_name}
+                width={240}
+                height={240}
                 priority
-                className="rounded-lg aspect-square object-cover"
+                className="size-28 rounded-2xl object-cover shadow-lg ring-1 ring-border sm:size-36 md:size-60"
               />
             ) : (
-              <div className="w-[400px] h-[400px] max-w-full aspect-square rounded-lg bg-muted flex items-center justify-center">
-                <span className="text-6xl font-bold text-muted-foreground">
+              <div className="flex size-28 items-center justify-center rounded-2xl bg-muted ring-1 ring-border sm:size-36 md:size-60">
+                <span className="text-4xl font-bold text-muted-foreground md:text-6xl">
                   {initials}
                 </span>
               </div>
             )}
           </motion.div>
         </div>
+
+        {statistics.length > 0 && (
+          <motion.dl
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.7 }}
+            className={cn(
+              "mt-14 grid grid-cols-2 gap-px overflow-hidden rounded-xl border bg-border",
+              "[&>*:last-child:nth-child(odd)]:col-span-2 sm:[&>*:last-child:nth-child(odd)]:col-span-1",
+              statistics.length === 3 ? "sm:grid-cols-3" : "sm:grid-cols-4"
+            )}
+          >
+            {statistics.map((stat) => (
+              <div key={stat.id} className="bg-background p-5">
+                <dt className="text-xs text-muted-foreground">{stat.label}</dt>
+                <dd className="mt-1 text-2xl font-semibold tracking-tight sm:text-3xl">
+                  <CountUp to={stat.value} suffix={stat.suffix} />
+                </dd>
+              </div>
+            ))}
+          </motion.dl>
+        )}
       </div>
     </section>
   )

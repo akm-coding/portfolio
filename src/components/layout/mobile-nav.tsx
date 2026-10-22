@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Menu } from "lucide-react"
+import { FileText, Menu } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
   Sheet,
@@ -10,13 +10,13 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
-import { ThemeToggle } from "@/components/theme/theme-toggle"
 
 interface MobileNavProps {
   links: { label: string; href: string }[]
+  resumeUrl: string | null
 }
 
-export function MobileNav({ links }: MobileNavProps) {
+export function MobileNav({ links, resumeUrl }: MobileNavProps) {
   const [open, setOpen] = useState(false)
 
   return (
@@ -29,22 +29,29 @@ export function MobileNav({ links }: MobileNavProps) {
       </SheetTrigger>
       <SheetContent side="right" className="w-72">
         <SheetHeader>
-          <SheetTitle className="text-left">Navigation</SheetTitle>
+          <SheetTitle className="text-left">Menu</SheetTitle>
         </SheetHeader>
-        <nav className="flex flex-col gap-4 mt-6">
+        <nav className="flex flex-col gap-1 px-4">
           {links.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors px-2 py-1"
+              className="rounded-md px-2 py-2 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
             >
               {link.label}
             </a>
           ))}
-          <div className="pt-4 border-t">
-            <ThemeToggle />
-          </div>
+          {resumeUrl && (
+            <Button
+              className="mt-4 gap-2"
+              nativeButton={false}
+              render={<a href={resumeUrl} target="_blank" rel="noopener noreferrer" />}
+            >
+              <FileText className="size-4" />
+              View Résumé
+            </Button>
+          )}
         </nav>
       </SheetContent>
     </Sheet>
