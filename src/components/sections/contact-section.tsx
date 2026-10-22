@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { FileText, Github, Linkedin, Mail, MapPin, Phone } from 'lucide-react'
 
 import { getProfile } from '@/lib/queries/profile'
@@ -14,7 +15,7 @@ export async function ContactSection() {
     <Section
       id="contact"
       eyebrow="Contact"
-      title="Let's work together"
+      title={siteConfig.availability.open ? "Let's work together" : 'Get in touch'}
       description={
         siteConfig.availability.open
           ? `I'm currently ${siteConfig.availability.label.toLowerCase()} (${siteConfig.availability.detail}). I usually reply within a day.`
@@ -55,17 +56,15 @@ export async function ContactSection() {
               </ul>
 
               <div className="flex flex-wrap gap-2">
-                {profile.resume_url && (
-                  <Button
-                    variant="outline"
-                    className="gap-2"
-                    nativeButton={false}
-                    render={<a href={profile.resume_url} target="_blank" rel="noopener noreferrer" />}
-                  >
-                    <FileText className="size-4" />
-                    Résumé
-                  </Button>
-                )}
+                <Button
+                  variant="outline"
+                  className="gap-2"
+                  nativeButton={false}
+                  render={<Link href="/resume" />}
+                >
+                  <FileText className="size-4" />
+                  Resume
+                </Button>
                 {profile.linkedin_url && (
                   <Button
                     variant="outline"

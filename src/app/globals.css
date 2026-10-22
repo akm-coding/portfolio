@@ -128,3 +128,23 @@
     scroll-padding-top: 3.5rem;
     }
 }
+/* Print (used by /resume): always light, tight A4 margins */
+@page {
+  size: A4;
+  margin: 14mm 16mm;
+}
+
+@media print {
+  :root,
+  .dark {
+    --background: oklch(1 0 0);
+    --foreground: oklch(0.145 0 0);
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.145 0 0);
+    --muted-foreground: oklch(0.45 0 0);
+    --border: oklch(0.85 0 0);
+  }
+  html {
+    font-size: 14px;
+  }
+}

@@ -1,7 +1,7 @@
 // Static, recruiter-facing settings that don't live in Supabase.
 export const siteConfig = {
   availability: {
-    open: true,
+    open: false,
     label: "Open to new opportunities",
     detail: "Full-time · Remote or relocation",
   },

@@ -61,7 +61,6 @@ export function CommandMenu({ links }: { links: CommandMenuLinks }) {
   const openExternal = (url: string) => () => window.open(url, "_blank", "noopener")
 
   const externalLinks = [
-    links.resumeUrl && { label: "View résumé", icon: FileText, url: links.resumeUrl },
     links.linkedinUrl && { label: "LinkedIn", icon: Linkedin, url: links.linkedinUrl },
     links.githubUrl && { label: "GitHub", icon: Github, url: links.githubUrl },
   ].filter(Boolean) as { label: string; icon: typeof Github; url: string }[]
@@ -112,41 +111,47 @@ export function CommandMenu({ links }: { links: CommandMenuLinks }) {
               ))}
             </CommandGroup>
 
-            {(externalLinks.length > 0 || links.email) && (
-              <>
-                <CommandSeparator />
-                <CommandGroup heading="Links">
-                  {externalLinks.map(({ label, icon: Icon, url }) => (
-                    <CommandItem key={label} onSelect={() => run(openExternal(url))}>
-                      <Icon />
-                      {label}
-                    </CommandItem>
-                  ))}
-                  {links.email && (
-                    <>
-                      <CommandItem
-                        onSelect={() => run(() => (window.location.href = `mailto:${links.email}`))}
-                      >
-                        <Mail />
-                        Send an email
-                      </CommandItem>
-                      <CommandItem
-                        onSelect={() =>
-                          run(() =>
-                            navigator.clipboard
-                              .writeText(links.email!)
-                              .then(() => toast.success("Email copied to clipboard"))
-                          )
-                        }
-                      >
-                        <Copy />
-                        Copy email address
-                      </CommandItem>
-                    </>
-                  )}
-                </CommandGroup>
-              </>
-            )}
+            <CommandSeparator />
+            <CommandGroup heading="Links">
+              <CommandItem onSelect={() => run(() => router.push("/resume"))}>
+                <FileText />
+                View resume
+              </CommandItem>
+              {links.resumeUrl && (
+                <CommandItem onSelect={() => run(openExternal(links.resumeUrl!))}>
+                  <FileText />
+                  Download resume (PDF)
+                </CommandItem>
+              )}
+              {externalLinks.map(({ label, icon: Icon, url }) => (
+                <CommandItem key={label} onSelect={() => run(openExternal(url))}>
+                  <Icon />
+                  {label}
+                </CommandItem>
+              ))}
+              {links.email && (
+                <>
+                  <CommandItem
+                    onSelect={() => run(() => (window.location.href = `mailto:${links.email}`))}
+                  >
+                    <Mail />
+                    Send an email
+                  </CommandItem>
+                  <CommandItem
+                    onSelect={() =>
+                      run(() =>
+                        navigator.clipboard
+                          .writeText(links.email!)
+                          .then(() => toast.success("Email copied to clipboard"))
+                      )
+                    }
+                  >
+                    <Copy />
+                    Copy email address
+                  </CommandItem>
+                </>
+              )}
+            </CommandGroup>
 
             <CommandSeparator />
             <CommandGroup heading="Theme">

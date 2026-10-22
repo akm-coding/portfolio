@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import Link from "next/link"
 import { ArrowRight, FileText, Github, Linkedin, Mail, MapPin } from "lucide-react"
 import { motion } from "motion/react"
 
@@ -113,23 +114,15 @@ export function HeroSectionAnimated({
               variants={heroItemVariants}
               className="mt-8 flex flex-wrap items-center gap-3"
             >
-              {profile.resume_url && (
-                <Button
-                  size="lg"
-                  className="h-10 gap-2 px-4"
-                  nativeButton={false}
-                  render={
-                    <a
-                      href={profile.resume_url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    />
-                  }
-                >
-                  <FileText className="size-4" />
-                  View Résumé
-                </Button>
-              )}
+              <Button
+                size="lg"
+                className="h-10 gap-2 px-4"
+                nativeButton={false}
+                render={<Link href="/resume" />}
+              >
+                <FileText className="size-4" />
+                View Resume
+              </Button>
               <Button
                 variant="outline"
                 size="lg"

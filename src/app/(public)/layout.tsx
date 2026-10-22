@@ -36,8 +36,8 @@ export default async function PublicLayout({
           email: profile?.email ?? null,
         }}
       />
-      <main className="pt-14">{children}</main>
-      <footer className="border-t">
+      <main className="pt-14 print:pt-0">{children}</main>
+      <footer className="border-t print:hidden">
         <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-2 px-4 py-8 text-sm text-muted-foreground sm:flex-row sm:px-6">
           <p>&copy; {new Date().getFullYear()} {profile?.full_name ?? "Aung Kaung Myat"}</p>
           <p className="font-mono text-xs">

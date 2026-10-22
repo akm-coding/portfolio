@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Link from "next/link"
 import { FileText, Menu } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
@@ -13,10 +14,9 @@ import {
 
 interface MobileNavProps {
   links: { label: string; href: string }[]
-  resumeUrl: string | null
 }
 
-export function MobileNav({ links, resumeUrl }: MobileNavProps) {
+export function MobileNav({ links }: MobileNavProps) {
   const [open, setOpen] = useState(false)
 
   return (
@@ -42,16 +42,14 @@ export function MobileNav({ links, resumeUrl }: MobileNavProps) {
               {link.label}
             </a>
           ))}
-          {resumeUrl && (
-            <Button
-              className="mt-4 gap-2"
-              nativeButton={false}
-              render={<a href={resumeUrl} target="_blank" rel="noopener noreferrer" />}
-            >
-              <FileText className="size-4" />
-              View Résumé
-            </Button>
-          )}
+          <Button
+            className="mt-4 gap-2"
+            nativeButton={false}
+            render={<Link href="/resume" onClick={() => setOpen(false)} />}
+          >
+            <FileText className="size-4" />
+            View Resume
+          </Button>
         </nav>
       </SheetContent>
     </Sheet>

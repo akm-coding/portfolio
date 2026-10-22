@@ -2,10 +2,7 @@ import { GraduationCap } from "lucide-react"
 
 import { getEducation } from "@/lib/queries/education"
 import { Section } from "@/components/layout/section"
-
-function formatYear(dateString: string): string {
-  return new Date(dateString).getFullYear().toString()
-}
+import { formatYear } from "@/lib/format"
 
 export async function EducationSection() {
   const education = await getEducation()

@@ -1,37 +1,8 @@
 import { getExperiences } from "@/lib/queries/experiences"
 import { Badge } from "@/components/ui/badge"
 import { Section } from "@/components/layout/section"
+import { formatDuration, formatMonthYear, toBullets } from "@/lib/format"
 import { cn } from "@/lib/utils"
-
-function formatDate(dateString: string): string {
-  return new Date(dateString).toLocaleDateString("en-US", {
-    month: "short",
-    year: "numeric",
-  })
-}
-
-function formatDuration(start: string, end: string | null): string {
-  const startDate = new Date(start)
-  const endDate = end ? new Date(end) : new Date()
-  const months =
-    (endDate.getFullYear() - startDate.getFullYear()) * 12 +
-    (endDate.getMonth() - startDate.getMonth()) +
-    1
-  const years = Math.floor(months / 12)
-  const rest = months % 12
-  return [years && `${years} yr${years > 1 ? "s" : ""}`, rest && `${rest} mo`]
-    .filter(Boolean)
-    .join(" ")
-}
-
-// Descriptions are stored as free text; treat each non-empty line as a bullet,
-// stripping any leading "-", "•" or "*" the author typed.
-function toBullets(description: string): string[] {
-  return description
-    .split("\n")
-    .map((line) => line.replace(/^\s*[-•*]\s*/, "").trim())
-    .filter(Boolean)
-}
 
 export async function ExperienceSection() {
   const experiences = await getExperiences()
@@ -75,8 +46,8 @@ export async function ExperienceSection() {
                     </Badge>
                   )}
                   <span className="font-mono text-xs">
-                    {formatDate(exp.start_date)} –{" "}
-                    {end ? formatDate(end) : "Present"}
+                    {formatMonthYear(exp.start_date)} –{" "}
+                    {end ? formatMonthYear(end) : "Present"}
                   </span>
                   <span className="text-xs text-muted-foreground/70">
                     · {formatDuration(exp.start_date, end)}
