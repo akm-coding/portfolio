@@ -22,7 +22,7 @@ export function ProjectGallery({
 
   return (
     <div className="space-y-3">
-      <div className="relative aspect-video overflow-hidden rounded-lg">
+      <div className="relative aspect-video overflow-hidden rounded-xl border bg-muted">
         <Image
           src={currentImage.image_url}
           alt={
@@ -30,8 +30,8 @@ export function ProjectGallery({
             `${projectTitle} screenshot ${selectedIndex + 1}`
           }
           fill
-          className="object-cover"
-          sizes="(max-width: 768px) 100vw, 80vw"
+          className="object-contain"
+          sizes="(max-width: 1024px) 100vw, 1024px"
           priority
         />
       </div>
@@ -41,8 +41,11 @@ export function ProjectGallery({
           {images.map((image, index) => (
             <button
               key={image.id}
+              type="button"
               onClick={() => setSelectedIndex(index)}
-              className={`relative shrink-0 overflow-hidden rounded-md transition-opacity ${
+              aria-label={`Show screenshot ${index + 1}`}
+              aria-current={index === selectedIndex}
+              className={`relative shrink-0 overflow-hidden rounded-lg border bg-muted transition-opacity ${
                 index === selectedIndex
                   ? "ring-2 ring-primary"
                   : "opacity-70 hover:opacity-100"
