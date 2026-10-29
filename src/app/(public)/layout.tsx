@@ -1,3 +1,4 @@
+import { ChatWidget } from "@/components/chat/chat-widget"
 import { PublicNavbar } from "@/components/layout/public-navbar"
 import { TooltipProvider } from "@/components/ui/tooltip"
 import { getProfile } from "@/lib/queries/profile"
@@ -45,6 +46,9 @@ export default async function PublicLayout({
           </p>
         </div>
       </footer>
+      <div className="print:hidden">
+        <ChatWidget />
+      </div>
     </TooltipProvider>
   )
 }
