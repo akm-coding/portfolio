@@ -3,6 +3,7 @@ import Link from "next/link"
 import { ArrowUpRight, ExternalLink, Github, Smartphone } from "lucide-react"
 
 import { Badge } from "@/components/ui/badge"
+import { TechIcon } from "@/components/ui/tech-icon"
 import type { Project } from "@/lib/types/database"
 import { cn } from "@/lib/utils"
 
@@ -45,7 +46,7 @@ export function ProjectCard({
   return (
     <article
       className={cn(
-        "group relative flex h-full flex-col overflow-hidden rounded-xl border bg-card transition-all hover:border-foreground/20 hover:shadow-md",
+        "group relative flex h-full flex-col overflow-hidden rounded-xl border bg-card transition-all hover:border-brand/40 hover:shadow-md",
         featured && "md:flex-row"
       )}
     >
@@ -103,7 +104,8 @@ export function ProjectCard({
         {project.tech_stack.length > 0 && (
           <div className="flex flex-wrap gap-1">
             {project.tech_stack.slice(0, featured ? 8 : 5).map((tech) => (
-              <Badge key={tech} variant="secondary" className="font-normal">
+              <Badge key={tech} variant="secondary" className="gap-1 font-normal">
+                <TechIcon name={tech} className="size-3" />
                 {tech}
               </Badge>
             ))}

@@ -22,11 +22,12 @@ export function Section({
       <div className="mx-auto max-w-5xl px-4 sm:px-6">
         <div className="mb-10">
           {eyebrow && (
-            <p className="mb-2 font-mono text-xs uppercase tracking-widest text-muted-foreground">
-              {eyebrow}
+            <p className="mb-3 font-mono text-sm text-brand">
+              <span aria-hidden className="text-muted-foreground">~/</span>
+              {eyebrow.toLowerCase().replace(/\s+/g, "-")}
             </p>
           )}
-          <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">
+          <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
             {title}
           </h2>
           {description && (

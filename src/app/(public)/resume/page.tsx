@@ -73,13 +73,14 @@ export default async function ResumePage() {
     <div className="mx-auto max-w-[850px] px-4 py-8 sm:px-6 md:py-12 print:max-w-none print:p-0">
       <ResumeToolbar pdfUrl={profile.resume_url} />
 
-      <article className="space-y-7 rounded-xl border bg-card p-6 text-card-foreground shadow-sm sm:p-10 print:space-y-5 print:rounded-none print:border-0 print:p-0 print:shadow-none">
+      {/* Card chrome only from sm up: on phones it would double the page gutter */}
+      <article className="space-y-7 text-card-foreground sm:rounded-xl sm:border sm:bg-card sm:p-10 sm:shadow-sm print:space-y-5 print:rounded-none print:border-0 print:p-0 print:shadow-none">
         <header>
           <h1 className="text-3xl font-bold tracking-tight">{profile.full_name}</h1>
           <p className="mt-1 text-lg text-foreground/80">{profile.title}</p>
-          <ul className="mt-3 flex flex-wrap gap-x-5 gap-y-1 text-sm text-muted-foreground">
+          <ul className="mt-3 flex flex-col gap-y-1 text-sm text-muted-foreground sm:flex-row sm:flex-wrap sm:gap-x-5 print:flex-row print:flex-wrap print:gap-x-5">
             {contacts.map((c) => (
-              <li key={c.label}>
+              <li key={c.label} className="min-w-0 [overflow-wrap:anywhere]">
                 {c.href ? (
                   <a href={c.href} className="hover:text-foreground hover:underline">
                     {c.label}
@@ -109,11 +110,11 @@ export default async function ResumePage() {
                 return (
                   <div key={exp.id} className="break-inside-avoid">
                     <div className="flex flex-wrap items-baseline justify-between gap-x-4">
-                      <h3 className="font-semibold">
+                      <h3 className="w-full font-semibold sm:w-auto print:w-auto">
                         {exp.role}
-                        <span className="font-normal text-muted-foreground">
-                          {" "}
-                          · {exp.company}
+                        <span className="block font-normal text-muted-foreground sm:inline print:inline">
+                          <span className="hidden sm:inline print:inline"> · </span>
+                          {exp.company}
                         </span>
                       </h3>
                       <span className="text-sm tabular-nums text-muted-foreground">
@@ -151,7 +152,7 @@ export default async function ResumePage() {
                       {link && (
                         <a
                           href={link}
-                          className="text-xs text-muted-foreground hover:underline"
+                          className="min-w-0 text-xs text-muted-foreground [overflow-wrap:anywhere] hover:underline"
                         >
                           {prettyUrl(link)}
                         </a>
@@ -200,7 +201,10 @@ export default async function ResumePage() {
                       {entry.degree}
                       {entry.field_of_study && ` in ${entry.field_of_study}`}
                     </span>
-                    <span className="text-muted-foreground"> · {entry.institution}</span>
+                    <span className="block text-muted-foreground sm:inline print:inline">
+                      <span className="hidden sm:inline print:inline"> · </span>
+                      {entry.institution}
+                    </span>
                   </p>
                   <span className="tabular-nums text-muted-foreground">
                     {formatYear(entry.start_date)} –{" "}

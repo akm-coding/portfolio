@@ -15,7 +15,7 @@ export function ResumeToolbar({ pdfUrl }: { pdfUrl: string | null }) {
         <ArrowLeft className="size-4" />
         Back to portfolio
       </Link>
-      <div className="flex gap-2">
+      <div className="flex w-full gap-2 sm:w-auto [&>*]:flex-1 sm:[&>*]:flex-none">
         {pdfUrl && (
           <Button
             variant="outline"

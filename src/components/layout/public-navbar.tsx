@@ -14,7 +14,8 @@ export function PublicNavbar({ links }: { links: CommandMenuLinks }) {
     <header className="fixed top-0 z-50 w-full border-b bg-background/80 backdrop-blur-md print:hidden">
       <nav className="mx-auto flex h-14 max-w-5xl items-center justify-between gap-4 px-4 sm:px-6">
         <Link href="/" className="font-mono text-sm font-semibold tracking-tight">
-          AKM<span className="text-muted-foreground">.dev</span>
+          <span className="text-brand">~/</span>akm
+          <span className="text-muted-foreground">.dev</span>
         </Link>
 
         <div className="hidden items-center gap-6 md:flex">

@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight, FileText, Github, Linkedin, Mail, MapPin } from "lucide-react"
+import { ArrowRight, FileText, Github, Linkedin, Mail, MapPin, Sparkles } from "lucide-react"
 import { motion } from "motion/react"
 
 import { Badge } from "@/components/ui/badge"
@@ -54,6 +54,11 @@ export function HeroSectionAnimated({
         aria-hidden
         className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(to_right,var(--border)_1px,transparent_1px),linear-gradient(to_bottom,var(--border)_1px,transparent_1px)] bg-[size:48px_48px] [mask-image:radial-gradient(ellipse_at_top,black_20%,transparent_70%)] opacity-60"
       />
+      {/* Soft brand glow behind the portrait */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -top-24 right-0 -z-10 size-[520px] rounded-full bg-brand/15 blur-3xl md:right-[8%]"
+      />
 
       <div className="mx-auto max-w-5xl px-4 pt-16 pb-12 sm:px-6 md:pt-24">
         <div className="grid items-center gap-10 md:grid-cols-[1fr_auto]">
@@ -89,17 +94,26 @@ export function HeroSectionAnimated({
               )}
             </motion.div>
 
+            <motion.p
+              variants={heroItemVariants}
+              aria-hidden
+              className="mt-6 font-mono text-sm text-muted-foreground"
+            >
+              <span className="text-brand">$</span> whoami
+              <span className="terminal-cursor ml-1.5" />
+            </motion.p>
             <motion.h1
               variants={heroItemVariants}
-              className="mt-6 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl"
+              className="mt-2 text-5xl font-bold tracking-tighter sm:text-6xl lg:text-7xl"
             >
               {profile.full_name}
             </motion.h1>
             <motion.p
               variants={heroItemVariants}
-              className="mt-3 text-xl font-medium text-foreground/80 sm:text-2xl"
+              className="mt-4 text-xl font-medium text-foreground/80 sm:text-2xl"
             >
               {profile.title}
+              <span className="text-brand">.</span>
             </motion.p>
             {profile.tagline && (
               <motion.p
@@ -132,6 +146,15 @@ export function HeroSectionAnimated({
               >
                 Get in touch
                 <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                className="h-10 gap-2 border-brand/40 px-4 hover:border-brand hover:bg-brand/10"
+                onClick={() => window.dispatchEvent(new Event("open-chat"))}
+              >
+                <Sparkles className="size-4 text-brand" />
+                Ask my AI
               </Button>
 
               <div className="flex items-center gap-1 sm:ml-2">
@@ -202,7 +225,7 @@ export function HeroSectionAnimated({
             {statistics.map((stat) => (
               <div key={stat.id} className="bg-background p-5">
                 <dt className="text-xs text-muted-foreground">{stat.label}</dt>
-                <dd className="mt-1 text-2xl font-semibold tracking-tight sm:text-3xl">
+                <dd className="mt-1 font-mono text-2xl font-semibold tracking-tight sm:text-3xl">
                   <CountUp to={stat.value} suffix={stat.suffix} />
                 </dd>
               </div>

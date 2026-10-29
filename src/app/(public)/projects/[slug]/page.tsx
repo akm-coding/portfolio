@@ -12,6 +12,7 @@ import {
 } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
+import { TechIcon } from "@/components/ui/tech-icon"
 import { ProjectDescription } from "@/components/projects/project-description"
 import { ProjectGallery } from "@/components/projects/project-gallery"
 import { getProjectBySlug, getProjects } from "@/lib/queries/projects"
@@ -189,8 +190,9 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                 {project.tech_stack.map((tech) => (
                   <li
                     key={tech}
-                    className="rounded-md border bg-card px-2 py-1 text-xs font-medium"
+                    className="inline-flex items-center gap-1.5 rounded-md border bg-card px-2 py-1 text-xs font-medium"
                   >
+                    <TechIcon name={tech} className="size-3.5" />
                     {tech}
                   </li>
                 ))}
